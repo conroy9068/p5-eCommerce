@@ -1,0 +1,42 @@
+[
+  {
+    "pk": 1,
+    "model": "products.category",
+    "fields": {
+      "name": "body_fillers",
+      "friendly_name": "Body Fillers"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.category",
+    "fields": {
+      "name": "clear_coats",
+      "friendly_name": "Clear Coats"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.category",
+    "fields": {
+      "name": "primers",
+      "friendly_name": "Primers"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.category",
+    "fields": {
+      "name": "ancillaries",
+      "friendly_name": "Ancillaries"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.category",
+    "fields": {
+      "name": "pads_and_blocks",
+      "friendly_name": "Pads and Blocks"
+    }
+  }
+]

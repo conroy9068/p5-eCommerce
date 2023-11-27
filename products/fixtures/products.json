@@ -1,0 +1,80 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+            "sku": "7400.10070",
+            "name": "Sprayfill 2K Polyester Sprayable Bodyfiller 3.7L",
+            "description": "Excellent adhesion on various substrates including GRP, Metal, Wood, Polyester Laminates, and Hard Plastic. Features excellent flow and filling properties, suitable for large areas and deeper imperfections. Drying time 20-30 minutes, sanding grade P120-320.",
+            "price": 99.99,
+            "category": 1,
+            "rating": 4.5,
+            "image_url": "http://example.com/path-to-your-image.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "7400.10084",
+            "name": "Multifunctional Lightweight Putty 4.5Kg",
+            "description": "25% lighter than standard putties, offering very easy application and sanding without paper clogging. Ideal for larger surface areas.",
+            "price": 75.99,
+            "category": 1,
+            "rating": 4.7,
+            "image_url": "http://example.com/path-to-your-image.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "7400.10075",
+            "name": "Glass Fibre Reinforced Putty 1.8Kg",
+            "description": "Designed for all deep filling and bridging works. Comes with excellent sanding properties and can be used on a wide range of applications.",
+            "price": 85.99,
+            "category": 1,
+            "rating": 4.3,
+            "image_url": "http://example.com/path-to-your-image.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "7400.10083",
+            "name": "2K Easy Sand Flowable Filler 1L",
+            "description": "A flowable polyester filler putty for finishing, blending, and skim coating bodywork. Adheres well to steel, aluminium, and fiberglass. Less porous with higher resin content for reduced moisture penetration.",
+            "price": 65.99,
+            "category": 1,
+            "rating": 4.6,
+            "image_url": "http://example.com/path-to-your-image.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "7400.10015",
+            "name": "Diamond Clear 2K HS Clear Anti Scratch 1L",
+            "description": "High gloss with excellent UV stability and resistance. Provides an efficient drying time to match all conditions, offering great appearance and durability.",
+            "price": 120.99,
+            "category": 2,
+            "rating": 4.8,
+            "image_url": "http://example.com/path-to-your-image.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "7400.10026",
+            "name": "Full Body Clear Coat Fast Air Dry 1L",
+            "description": "Extremely fast drying with a good finish and high gloss. Suitable for air drying and polishing post-application.",
+            "price": 110.99,
+            "category": 2,
+            "rating": 4.4,
+            "image_url": "http://example.com/path-to-your-image.jpg"
+        }
+    }
+]

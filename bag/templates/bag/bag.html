@@ -23,6 +23,7 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
+                {{ bag_items|length }} item{{ bag_items|pluralize }} in your bag
                     <div class="table-responsive rounded">
                         <table class="table table-sm table-borderless">
                             <thead class="text-black">

@@ -38,6 +38,19 @@ body {
     color: white;
 }
 
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -71,8 +84,8 @@ body {
 }
 
 a.category-badge > span.badge:hover {
-    background: #222 !important;
-    color: white !important;
+    background: #212529 !important;
+    color: #fff !important;
 }
 
 .btt-button {
@@ -87,6 +100,10 @@ a.category-badge > span.badge:hover {
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+input[name='q']::placeholder {
+    color: #aab7c4;
 }
 
 /* -------------------------------- Toasts */
@@ -156,10 +173,13 @@ a.category-badge > span.badge:hover {
     overflow-y: auto;
 }
 
-.bag-notification-wrapper {
-    height: 100px;
-    overflow-x: hidden;
-    overflow-y: auto;
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
 }
 
 /* Allauth form formatting */
@@ -216,16 +236,6 @@ a.category-badge > span.badge:hover {
 	color: #17a2b8; /* text-info */
 }
 
-
-/* -------------------------------- Media Queries */
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
-
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -241,7 +251,7 @@ a.category-badge > span.badge:hover {
     }
 }
 
-/* fixed top navbar only on small and down */
+/* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
         padding-top: 116px;

@@ -1,10 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.db.models.signals import post_delete, post_save
+from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django_countries.fields import CountryField
 
-# Create your models here.
 
 class UserProfile(models.Model):
     """
@@ -33,4 +32,3 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.userprofile.save()
-

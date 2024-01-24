@@ -1,1 +1,1 @@
-web: gunicorn p5-ecommerce.wsgi:application
+web: gunicorn MarketFlex.wsgi:application

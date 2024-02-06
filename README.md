@@ -19,7 +19,7 @@
   - [Order Form](#order-from)
   - [Order Confirmation Page](#order-confirmation-page)
   - [Profile Page](#profile-page)
-  - [Register, Sign In & Log Out](#register-sign-in--log-out)
+  - [Register, Log In & Log Out](#register-log-in--log-out)
   - [Footer](#footer)
   - [Product Create](#product-create)
   - [Product Edit](#product-edit)
@@ -151,7 +151,7 @@ View user stories [Here]()
 ### Profile Page
 
 
-### Register, Sign In & Log Out
+### Register, Log In & Log Out
 
 
 ### Footer

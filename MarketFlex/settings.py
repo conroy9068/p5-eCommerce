@@ -25,13 +25,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY','')
+SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'p5-ecommerce-fb6cb413b539.herokuapp.com', 'https://p5-ecommerce-fb6cb413b539.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',
+                 'p5-ecommerce-fb6cb413b539.herokuapp.com',
+                 'https://p5-ecommerce-fb6cb413b539.herokuapp.com/']
 
 
 # Application definition
@@ -54,7 +56,7 @@ INSTALLED_APPS = [
     'profiles',
 
 
-    #Other
+    # Other
     'crispy_forms',
     'storages',
 
@@ -85,7 +87,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required for django-allauth
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'bag.contexts.bag_contents',
@@ -135,7 +137,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
 
 
 # Password validation
@@ -197,7 +198,6 @@ if 'USE_AWS' in os.environ:
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', '')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', '')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-
 
     # Static and Media Files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'

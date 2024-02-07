@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('../../media/homepage-background.png') no-repeat center center fixed;
+    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -106,7 +106,8 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
-/* -------------------------------- Toasts */
+/* ------------------------------- bootstrap toasts */
+
 .message-container {
     position: fixed;
     top: 72px;
@@ -236,7 +237,7 @@ input[name='q']::placeholder {
 	color: #17a2b8; /* text-info */
 }
 
-/* ProductForm */
+/* Product Form */
 
 .btn-file {
     position: relative;
@@ -263,6 +264,7 @@ input[name='q']::placeholder {
     border-color: #dc3545;
     border-radius: 0;
 }
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {

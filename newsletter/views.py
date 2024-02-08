@@ -31,17 +31,17 @@ def send_confirmation_email(request, email):
         ).strip()  # Remove any leading/trailing whitespace
         body = render_to_string(
             'newsletter/confirmation_emails/confirmation_email_body.txt',
-            {'email': email, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+            {'email': email, 'contact_email': settings.EMAIL_HOST_USER}
         )
         print(f"Subject: {subject}")
         print(f"Body: {body}")
-        print(f"From: {settings.DEFAULT_FROM_EMAIL}")
+        print(f"From: {settings.EMAIL_HOST_USER}")
         print(f"To: {email}")
 
         send_mail(
             subject,
             body,
-            settings.DEFAULT_FROM_EMAIL,
+            settings.EMAIL_HOST_USER,
             [email]
         )
     except BadHeaderError:

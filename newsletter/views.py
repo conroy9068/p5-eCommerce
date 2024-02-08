@@ -15,12 +15,11 @@ def subscribe(request):
             print("Cleaned data:", form.cleaned_data['email'])
             subscriber = form.save()
             messages.success(request, 'You have successfully subscribed.')
-            send_confirmation_email(request, form.cleaned_data['email'])
+            send_confirmation_email(request, subscriber.email)
             return redirect('home')
     else:
         form = SubscriberForm()
     return render(request, 'newsletter/subscribe.html', {'form': form})
-
 
 
 def send_confirmation_email(request, email):
@@ -34,6 +33,11 @@ def send_confirmation_email(request, email):
             'newsletter/confirmation_emails/confirmation_email_body.txt',
             {'email': email, 'contact_email': settings.DEFAULT_FROM_EMAIL}
         )
+        print(f"Subject: {subject}")
+        print(f"Body: {body}")
+        print(f"From: {settings.DEFAULT_FROM_EMAIL}")
+        print(f"To: {email}")
+
         send_mail(
             subject,
             body,

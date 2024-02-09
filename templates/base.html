@@ -118,6 +118,55 @@
         </div>
     </header>
 
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+<footer class="container-fluid bg-dark text-white pt-4">
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h5 class="logo-font">MarketFlex</h5>
+            <p>Abrasives Experts at your Service!</p>
+        </div>
+    </div>
+    <div class="row pb-4">
+        <div class="col-lg-4 text-center mb-4">
+            <h5 class="logo-font">Contact Us</h5>
+            <ul class="list-unstyled">
+            <li><a href="#" >Contact Form</a></li>
+            <li><a href="tel:123-456-7890" >Phone</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-4 text-center mb-4">
+            <h5 class="logo-font">Quick Links</h5>
+            <ul class="list-unstyled">
+                <li><a href="{% url 'home' %}" >Home</a></li>
+                <li><a href="{% url 'products' %}" >Products</a></li>
+                <li><a href="#" >About</a></li>
+                <li><a href="#" >Contact</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-4 text-center mb-4">
+            <h5 class="logo-font">Social Media</h5>
+            <ul class="list-unstyled">
+                <li><a href="https://www.facebook.com" target="_blank" >Facebook</a></li>
+                <li><a href="https://www.twitter.com" target="_blank" >Twitter</a></li>
+                <li><a href="https://www.instagram.com" target="_blank" >Instagram</a></li>
+                <li><a href="https://www.pinterest.com" target="_blank" >Pinterest</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center py-2">
+            <p class="mb-0 text-muted">© 2020 MarketFlex. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -135,12 +184,6 @@
         {% endfor %}
     </div>
     {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
-
-    {% block content %}
-    {% endblock %}
 
     {% block postloadjs %}
     <script type="text/javascript">

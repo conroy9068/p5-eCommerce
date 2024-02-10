@@ -7,7 +7,7 @@
 <div class="contact-container">
     <div class="contact-form">
         <h1 class="text-center default-page-header">Contact Us</h1>
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" class="form-horizontal" enctype="multipart/form-data">
             {% csrf_token %}
             <fieldset class="form-group custom-form-outer-container">
                 {{ form|crispy }}

@@ -381,7 +381,7 @@ footer ul li {
 
 /* Contact form styles */
 .contact-container {
-    padding-top: 100px;
+    padding-top: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;

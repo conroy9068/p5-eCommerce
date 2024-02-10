@@ -23,8 +23,7 @@ class ContactCreateView(CreateView):
             send_mail(
                 f"Message from {self.object.name}",
                 self.object.message,
-                settings.DEFAULT_FROM_EMAIL,
-                [settings.EMAIL_HOST_USER],
+                settings.EMAIL_HOST_USER,
                 fail_silently=False,
             )
             messages.success(self.request, "Your message has been sent.")

@@ -33,10 +33,6 @@ def send_confirmation_email(request, email):
             'newsletter/confirmation_emails/confirmation_email_body.txt',
             {'email': email, 'contact_email': settings.EMAIL_HOST_USER}
         )
-        print(f"Subject: {subject}")
-        print(f"Body: {body}")
-        print(f"From: {settings.EMAIL_HOST_USER}")
-        print(f"To: {email}")
 
         send_mail(
             subject,

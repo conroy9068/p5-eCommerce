@@ -379,6 +379,16 @@ footer ul li {
     }
 }
 
+/* Contact form */
+form .form-control {
+    border-radius: 0.25rem;
+}
+
+form .btn-primary {
+    border-radius: 0.25rem;
+}
+
+
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {

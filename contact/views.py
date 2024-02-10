@@ -22,12 +22,15 @@ class ContactCreateView(CreateView):
                 f"Message from {self.object.name}",
                 self.object.message,
                 settings.EMAIL_HOST_USER,
+                [settings.EMAIL_HOST_USER],
                 fail_silently=False,
             )
             messages.success(self.request, "Your message has been sent.")
-            return redirect('home')
         except BadHeaderError:
             messages.error(self.request, "Invalid header found.")
         except Exception as e:
             # Log the error or send a message to the admin
             messages.error(self.request, f"An error occurred: {e}")
+            return redirect('home')
+
+        return redirect('home')

@@ -116,9 +116,18 @@ View user stories [Here]()
 
 ### Typography
 
+- Lato
 
 ### Colours
+![Image Description](./README_ASSESTS/MarketFlex%20Color%20Palette.png)
 
+- [Coolors](https://coolors.co/)
+
+- #13293D: A dark navy blue, often used for text or background elements that require a dark, strong presence.
+- #006494: A rich medium blue, good for accents and to draw attention to elements.
+- #247BA0: A calming mid-tone blue, suitable for backgrounds, buttons, or headers.
+- #1B98E0: A bright sky blue, stands out well against both light and dark elements, good for call-to-action buttons or links.
+- #E8F1F2: A very light blue with a hint of grey, excellent for backgrounds or for a light, airy feeling in the design.
 
 
 ## Features

@@ -19,3 +19,14 @@
     max-height: 416px;
     overflow-y: auto;
 }
+
+.container-profile {
+    width: 100%;
+    padding: 0 15px;
+}
+
+.form-container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+

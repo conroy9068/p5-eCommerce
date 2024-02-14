@@ -10,3 +10,4 @@ cloudinary_python.txt
 myenv/
 .env
 db.sqlite3
+TESTING.md

@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/homepage-background.png') no-repeat center center fixed;
+    /* background: url('/media/homepage-background.png') no-repeat center center fixed; */
     background-size: cover;
     height: calc(100vh - 164px);
     color: #13293D; /* Dark navy blue for text */
@@ -16,7 +16,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
+    background-color: rgba(255, 255, 255, 0.5);
     z-index: 0;
 }
 
@@ -74,16 +74,6 @@ body {
 
 .bg-black {
     background-color: #13293D !important;
-}
-
-.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
 }
 
 a.category-badge > span.badge:hover {

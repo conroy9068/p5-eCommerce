@@ -119,7 +119,7 @@ View user stories [Here]()
 - Lato
 
 ### Colours
-![Image Description](./README_ASSESTS/MarketFlex%20Color%20Palette.png)
+![Image Description](./README_ASSESTS/color-palette.png)
 
 - [Coolors](https://coolors.co/)
 
@@ -192,7 +192,7 @@ View user stories [Here]()
 
 # Testing
 
-During development, using flake8, errors or warnings were fixed as they appeared such as indentation errors, lines too long, or extra space issues.
+Browse to the [TESTING.md](TESTING.md) file for the full testing documentation.
 
 ## Technologies Used
 

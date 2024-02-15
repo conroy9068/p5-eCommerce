@@ -185,6 +185,8 @@ View user stories [Here]()
 
 * Ability to add reviews for products
 * Stock management system to track stock levels and allow admin to add stock. The sale of an item would also update the stockm level automatically.
+* A blog section to keep users up to date with the latest news and promotions.
+* An about us page to give the user more information about the company.
 
 
 ## Bugs

@@ -2,15 +2,16 @@
 {% load static %}
 
 {% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
     </div>
-</div>
 {% endblock %}
 
 {% block content %}
-<div class="container h-100">
+<div class="overlay"></div>
+<div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
             <h2 class="logo-font">About Us</h2>
@@ -26,7 +27,8 @@
         <div class="col">
             <p class="lead">
                 Welcome to MarketFlex, Ireland's premier destination for high-quality tools and equipment tailored to meet the diverse needs of garages, tradesmen, and contractors. With over two decades of dedicated service, we have established ourselves as the leading suppliers in the industrial and commercial sectors, offering unparalleled access to a wide range of products, from advanced abrasives to comprehensive surface finishing systems.
-            </p>        </div>
+            </p>
+        </div>
     </div>
     <div class="row mb-4">
         <div class="col-md-6">
@@ -57,11 +59,6 @@
         </div>
         <div class="col-md-6">
             <img class="img-fluid" src="{% static 'media/man-working-in-factory.jpg' %}" alt="Man working on factory floor">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <p>text</p>
         </div>
     </div>
 </div>

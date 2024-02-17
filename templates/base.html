@@ -124,42 +124,42 @@
     {% block content %}
     {% endblock %}
 
-    <!-- Footer -->
-<footer class="container-fluid bg-dark text-white pt-4">
-    <div class="row">
-        <div class="col-12 text-center mb-4">
-            <h5 class="logo-font">MarketFlex</h5>
-            <p>Abrasives Experts at your Service!</p>
+        <!-- Footer -->
+    <footer class="container-fluid bg-dark text-white pt-4">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h5 class="logo-font">MarketFlex</h5>
+                <p>Abrasives Experts at your Service!</p>
+            </div>
         </div>
-    </div>
-    <div class="row pb-4">
-        <div class="col-lg-4 text-center mb-4">
-            <h5 class="logo-font">Subscribe to our Newsletter</h5>
-            <ul class="list-unstyled">
-            <li><a href="{% url 'subscribe' %}" >Click Here</a></li>
-            </ul>
+        <div class="row pb-4">
+            <div class="col-lg-4 text-center mb-4">
+                <h5 class="logo-font">Subscribe to our Newsletter</h5>
+                <ul class="list-unstyled">
+                <li><a href="{% url 'subscribe' %}" >Click Here</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 text-center mb-4">
+                <h5 class="logo-font">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'home' %}" >Home</a></li>
+                    <li><a href="{% url 'products' %}" >Products</a></li>
+                    <li><a href="{% url 'contact_us' %}" >Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 text-center mb-4">
+                <h5 class="logo-font">Social Media</h5>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.facebook.com" target="_blank" >Facebook</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="col-lg-4 text-center mb-4">
-            <h5 class="logo-font">Quick Links</h5>
-            <ul class="list-unstyled">
-                <li><a href="{% url 'home' %}" >Home</a></li>
-                <li><a href="{% url 'products' %}" >Products</a></li>
-                <li><a href="{% url 'contact_us' %}" >Contact</a></li>
-            </ul>
+        <div class="row">
+            <div class="col-12 text-center py-2">
+                <p class="mb-0 text-muted">© 2020 MarketFlex. All rights reserved.</p>
+            </div>
         </div>
-        <div class="col-lg-4 text-center mb-4">
-            <h5 class="logo-font">Social Media</h5>
-            <ul class="list-unstyled">
-                <li><a href="https://www.facebook.com" target="_blank" >Facebook</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 text-center py-2">
-            <p class="mb-0 text-muted">© 2020 MarketFlex. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
 
     {% if messages %}

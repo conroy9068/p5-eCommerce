@@ -20,6 +20,11 @@ body {
     z-index: 0;
 }
 
+.content-wrapper {
+    min-height: calc(100vh - 164px);
+    padding-bottom: 100px;
+}
+
 .icon {
     align-items: center;
     display: inline-flex;

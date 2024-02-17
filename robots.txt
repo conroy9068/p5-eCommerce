@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /bag/
+Disallow: https://p5-ecommerce-fb6cb413b539.herokuapp.com/sitemap.xml

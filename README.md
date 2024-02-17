@@ -360,7 +360,7 @@ Utilizing tools like Google Trends and WordTracker, the aim is to identify and t
 1. "Abrasives"
 2. "Automotive Refinishing"
 3. "Engineering Tools"
-4. "Woodworking Equipment"
+4. "Woodworking Tools"
 5. "Metal Fabrication"
 6. "Rupes Tools"
 7. "Pencil Grinders"

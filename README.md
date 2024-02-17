@@ -183,10 +183,13 @@ View user stories [Here]()
 
 ## Features Left to Implement
 
-* Ability to add reviews for products
-* Stock management system to track stock levels and allow admin to add stock. The sale of an item would also update the stockm level automatically.
-* A blog section to keep users up to date with the latest news and promotions.
-* An about us page to give the user more information about the company.
+- Ability to add reviews for products
+- Stock management system to track stock levels and allow admin to add stock. The sale of an item would also update the stockm level automatically.
+- A blog section to keep users up to date with the latest news and promotions.
+- An about us page to give the user more information about the company.
+- Setup address field to autofill if user is logged in and has details saved.
+- Pop up window to confirm deletion of a product.
+- Pop up window confirming add item to bag.
 
 
 ## Bugs
@@ -211,57 +214,118 @@ Browse to the [TESTING.md](TESTING.md) file for the full testing documentation.
 ### Libraries & Frameworks
 
 - Django:
-
   - The Django web framework was used to create the full-stack web application.
 
-- Django Crispy Forms
+- Django Crispy Forms:
+  - A Django app that provides a way to control the rendering behavior of Django forms in a DRY manner. It is used to create elegant, div-based forms.
 
-	- ??
+- Django Allauth:
+  - Provides authentication, registration, and account management. It supports multiple authentication sources like social media platforms.
 
-- Django allauth
+- Django Storages:
+  - A collection of custom storage backends for Django. It allows Django projects to store files in locations other than the local filesystem, such as cloud storage services.
 
-	- ??
+- Stripe Library:
+  - This library is used to integrate payment services provided by Stripe into web applications, allowing for the processing of payments.
 
-- Django storage
+- Django Countries:
+  - A Django app that provides country objects and a country field for models, enabling easy handling of country selection in forms.
 
-	- ??
-
-- Stripe Library
-
-	- ??
-
-- Django countries
-
-	- ??
-
-- Psycopg2-Binary
-
+- Psycopg2-Binary:
   - A PostgreSQL database adapter for Python, providing efficient and secure database connections.
 
 - PostgreSQL:
-
   - PostgreSQL was used as the object-relational database system.
 
 - ElephantSQL:
-
-  - ElephantSQL was used to host the database.
+  - ElephantSQL offers PostgreSQL as a service, which can be used to host and manage the database in the cloud.
 
 - Git:
-
   - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
 - GitHub:
-
   - GitHub is used to store the projects code after being pushed from Git.
 
 - Heroku:
+  - Heroku was used to deploy the application, providing a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
-  - Heroku was used for the deployed application.
-
-- Gunicorn
-
+- Gunicorn:
   - A Python WSGI HTTP server for UNIX, used to run Python web applications.
 
+- asgiref:
+  - Serves as the foundation for running asynchronous tasks in Django. It's essential for handling asynchronous protocols like WebSockets.
+
+- boto3:
+  - The Amazon Web Services (AWS) SDK for Python, used to interact with AWS services such as S3.
+
+- botocore:
+  - The low-level core functionality of boto3, upon which the 'boto3' library is built.
+
+- certifi:
+  - A collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts.
+
+- cffi:
+  - A Foreign Function Interface for Python calling C code, used for interfacing with low-level libraries.
+
+- charset-normalizer:
+  - A library for character encoding detection, particularly useful in HTTP scenarios.
+
+- cryptography:
+  - A package designed to expose cryptographic recipes and primitives to Python developers.
+
+- defusedxml:
+  - An XML library that protects against dangerous XML attacks by wrapping the standard XML APIs.
+
+- dj-database-url:
+  - A Django utility that allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+
+- idna:
+  - A library for handling Internationalized Domain Names in Applications (IDNA).
+
+- jmespath:
+  - A query language for JSON, used to search and extract data from JSON documents.
+
+- oauthlib:
+  - A generic, spec-compliant, thorough implementation of the OAuth request-signing logic.
+
+- Pillow:
+  - A Python Imaging Library that adds image processing capabilities to your Python interpreter.
+
+- pycparser:
+  - A complete parser of the C language, written in pure Python.
+
+- PyJWT:
+  - A Python library that allows you to encode and decode JSON Web Tokens (JWT).
+
+- python3-openid:
+  - A set of Python packages to support use of the OpenID decentralized identity system.
+
+- pytz:
+  - A library that enables accurate and cross-platform timezone calculations.
+
+- python-dotenv:
+  - Reads key-value pairs from a .env file and can set them as environment variables.
+
+- requests:
+  - A library that allows you to send HTTP requests using Python.
+
+- requests-oauthlib:
+  - A library that provides OAuth support for Python requests.
+
+- requests-oauthlib:
+  - A library that provides OAuth support for Python requests.
+
+- s3transfer:
+  - A Python library that provides a high-level interface for Amazon S3.
+
+- six:
+  - A Python 2 and 3 compatibility library.
+
+-sqlparse:
+  - A non-validating SQL parser module for Python.
+
+- typeings-extensions:
+  - A backport of the standard library typing module for Python versions older than 3.8.
 
 ### Validator Testing
 
@@ -269,8 +333,50 @@ Browse to the [TESTING.md](TESTING.md) file for the full testing documentation.
 
 ## Web Marketing
 
+MarketFlex stands as a pivotal B2B and B2C e-commerce platform, dedicated to revolutionizing the way garages, tradesmen, specialized and general contractors, as well as retail shops in Ireland, source their tools and equipment. With a comprehensive product range spanning categories like Abrasives, Automotive Refinishing, Engineering, Woodworking, and more, MarketFlex is committed to providing high-quality materials at competitive prices.
+
+### Key Advantages for MarketFlex:
+- Cost Efficiency: By offering products at near cost price, we ensure that our clients, from garages to professional contractors, receive the best value for their investments.
+- Quick Delivery: Our efficient logistics ensure that products are delivered swiftly, minimizing downtime and enhancing productivity for our clients.
+- Personalized Support: Local representatives are always on hand to assist with queries, offer product demos, and ensure that every customer finds the right solution for their needs.
+- Diverse Product Range: From Rupes detailing packages for automotive care to stainless steel finishing and chemical cleaning solutions, our extensive catalog caters to a wide array of industry needs.
+
+### Target Audience:
+MarketFlex primarily serves garages, tradesmen, specialized and general contractors, and retail shops looking to stock high-quality tools and equipment. We also cater to individual buyers, offering a seamless purchasing experience for both one-time and recurring needs.
+
+### Marketing and Customer Engagement Strategies:
+Social Media and Online Marketing: Leveraging a Facebook business page and targeted SEO and ad campaigns to build our online presence, with plans to introduce TikTok for showcasing our latest products through engaging video content.
+Community Building: Offering valuable tips and tricks through our content, we aim to build a community of informed users, enhancing customer engagement and loyalty.
+
+### Site Features and User Experience:
+MarketFlex is designed with user convenience in mind, featuring easy navigation, dedicated customer support, and a streamlined purchase process. Our goal is to ensure that every visitor can effortlessly find and acquire the tools and equipment they need, enhancing their operational efficiency.
 
 ## Search Engine Optimization
+
+SEO and Content Strategy:
+Utilizing tools like Google Trends and WordTracker, the aim is to identify and target key search terms relevant to our diverse product range. Inspired by industry leaders, our content emphasizes MarketFlex's role as "Abrasives Experts at your Service!"
+
+**Short Tail Keywords:**
+1. "Abrasives"
+2. "Automotive Refinishing"
+3. "Engineering Tools"
+4. "Woodworking Equipment"
+5. "Metal Fabrication"
+6. "Rupes Tools"
+7. "Pencil Grinders"
+9. "Body Filler"
+10. "Stainless Steel Finishing"
+
+**Long Tail Keywords:**
+1. "Best Abrasives for Metal Fabrication"
+2. "Top Automotive Refinishing Products"
+3. "High-Quality Engineering Tools in Ireland"
+4. "Woodworking Equipment for Professionals"
+5. "Rupes Tools for Automotive Care"
+6. "Pencil Grinders for Metal Fabrication"
+7. "Body Filler for Automotive Repairs"
+8. "Stainless Steel Finishing Solutions"
+
 
 
 ### sitemap.xml

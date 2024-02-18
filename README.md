@@ -113,6 +113,31 @@ View user stories [Here]()
 
 ### Wireframes
 
+Wireframes were created using Balsamiq. The wireframes were created for desktop with the goal being to create a responsive design. The wireframes were created for the following pages:
+
+- Home Page
+  - ![Image Description](./README_ASSESTS/wf-home.png)
+
+- Product List Page
+  - ![Image Description](./README_ASSESTS/wf-all-products.png)
+
+- Product Detail Page
+  - ![Image Description](./README_ASSESTS/wf-product-detail.png)
+
+- Bag Page
+  - ![Image Description](./README_ASSESTS/wf-bag.png)
+
+- Checkout Page
+  - ![Image Description](./README_ASSESTS/wf-checkout-form.png)
+
+- Profile Page
+  - ![Image Description](./README_ASSESTS/wf-profile.png)
+
+- Contact Page
+  - ![Image Description](./README_ASSESTS/wf-contact.png)
+
+- Newsletter Page
+  - ![Image Description](./README_ASSESTS/wf-newsletter.png)
 
 ### Typography
 
@@ -345,8 +370,9 @@ MarketFlex stands as a pivotal B2B and B2C e-commerce platform, dedicated to rev
 MarketFlex primarily serves garages, tradesmen, specialized and general contractors, and retail shops looking to stock high-quality tools and equipment. We also cater to individual buyers, offering a seamless purchasing experience for both one-time and recurring needs.
 
 ### Marketing and Customer Engagement Strategies:
-Social Media and Online Marketing: Leveraging a Facebook business page and targeted SEO and ad campaigns to build our online presence, with plans to introduce TikTok for showcasing our latest products through engaging video content.
-Community Building: Offering valuable tips and tricks through our content, we aim to build a community of informed users, enhancing customer engagement and loyalty.
+- Social Media and Online Marketing: Leveraging a Facebook business page and targeted SEO and ad campaigns to build our online presence, with plans to introduce TikTok for showcasing our latest products through engaging video content.
+
+- Community Building: Offering valuable tips and tricks through our content, we aim to build a community of informed users, enhancing customer engagement and loyalty.
 
 ### Site Features and User Experience:
 MarketFlex is designed with user convenience in mind, featuring easy navigation, dedicated customer support, and a streamlined purchase process. Our goal is to ensure that every visitor can effortlessly find and acquire the tools and equipment they need, enhancing their operational efficiency.
@@ -379,16 +405,13 @@ Utilizing tools like Google Trends and WordTracker, the aim is to identify and t
 9. "Bodyshop Supplies in Ireland"
 
 
-
 ### sitemap.xml
 
+Site map was generated using [XML Sitemaps](https://www.xml-sitemaps.com/) and then uploaded to the root directory of the site.
 
 ### robots.txt
 
-
-### Sitemap Google Registration
-
-
+The robots.txt file was created and uploaded to the root directory of the site.
 
 ## Deployment
 
@@ -446,6 +469,10 @@ Utilizing tools like Google Trends and WordTracker, the aim is to identify and t
 * [Chrome DevTools and Lighthouse](https://developer.chrome.com/docs/devtools/) - Web Developer Tools.
 
 ## Credits
+
+- Mentor Lauren Nicole - For her guidance and support throughout the project and course.
+- Code Institute - For the course content and support.
+- Slack Community - For their support and guidance.
 
 
 ### Content

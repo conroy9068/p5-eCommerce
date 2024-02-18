@@ -468,10 +468,8 @@ footer ul li {
 
 /* Mailchimp form */
 #mc_embed_signup{
-    background:#fff;
+    /* background:#fff; */
     clear:center;
     font:14px Helvetica,Arial,sans-serif;
     width: 400px;
 }
-            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-               We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */

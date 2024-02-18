@@ -158,8 +158,9 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 
 ## Features
 
-
 ### Nav Bar
+
+- The navigation bar is fixed to the top of the page and is visible on all pages. Its optimised for mobile and desktop view.
 
 
 ### Landing Page

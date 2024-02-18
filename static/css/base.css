@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    /* background: url('/media/homepage-background.png') no-repeat center center fixed; */
+    background: url('../media/man-working-in-factory.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #13293D; /* Dark navy blue for text */
@@ -377,11 +377,9 @@ footer ul li {
 
 /* Contact form styles */
 .contact-container {
-    padding-top: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     min-height: calc(100vh - 100px);
 }
 

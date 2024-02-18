@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.getenv('DEBUG', 'False').lower() == 'True'
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1',
                  'p5-ecommerce-fb6cb413b539.herokuapp.com',

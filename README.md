@@ -117,28 +117,28 @@ View user stories [Here]()
 Wireframes were created using Balsamiq. The wireframes were created for desktop with the goal being to create a responsive design. The wireframes were created for the following pages:
 
 - Home Page
-  - ![Image Description](./README_ASSESTS/wf-home.png)
+  - ![Wireframe for home page](./README_ASSESTS/wf-home.png)
 
 - Product List Page
-  - ![Image Description](./README_ASSESTS/wf-all-products.png)
+  - ![Wireframe for all products](./README_ASSESTS/wf-all-products.png)
 
 - Product Detail Page
-  - ![Image Description](./README_ASSESTS/wf-product-detail.png)
+  - ![Wireframe for product details](./README_ASSESTS/wf-product-detail.png)
 
 - Bag Page
-  - ![Image Description](./README_ASSESTS/wf-bag.png)
+  - ![Wireframe for shopping bag](./README_ASSESTS/wf-bag.png)
 
 - Checkout Page
-  - ![Image Description](./README_ASSESTS/wf-checkout-form.png)
+  - ![Wireframe for checkout form](./README_ASSESTS/wf-checkout-form.png)
 
 - Profile Page
-  - ![Image Description](./README_ASSESTS/wf-profile.png)
+  - ![Wireframe for user profile page](./README_ASSESTS/wf-profile.png)
 
 - Contact Page
-  - ![Image Description](./README_ASSESTS/wf-contact.png)
+  - ![Wireframe for contact page](./README_ASSESTS/wf-contact.png)
 
 - Newsletter Page
-  - ![Image Description](./README_ASSESTS/wf-newsletter.png)
+  - ![Wireframe for newsletter](./README_ASSESTS/wf-newsletter.png)
 
 ### Typography
 
@@ -161,52 +161,99 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 ### Nav Bar
 
 - The navigation bar is fixed to the top of the page and is visible on all pages. Its optimised for mobile and desktop view.
-
+![Navigation bar on desktop](./README_ASSESTS/project-screenshots/nav-desktop.png)
+![Navigation bar on mobile](./README_ASSESTS/project-screenshots/nav-mobile.png)
 
 ### Landing Page
 
+- The landing page is the first page the user sees when they visit the site. It contains a hero image and a call to action button to view all products.
+![Landing page](./README_ASSESTS/project-screenshots/landing-page.png)
 
 ### Product List Page
+
+- The product list page displays all the products available on the site. The user can filter the products by category and sort the products by price.
+![Product list page](./README_ASSESTS/project-screenshots/product-details.png)
 
 
 ### Product Detail View
 
+- The product detail view displays all the details of a product. The user can add the product to their shopping bag from this page.
+![Product detail view](./README_ASSESTS/project-screenshots/product-details.png)
 
 ### Search, Order & Filter
 
+- The user can search for a product by name using the search bar. The user can also filter the products by category and sort the products by price.
+![Order & Filter](./README_ASSESTS/project-screenshots/search.png)
+![Search bar](./README_ASSESTS/project-screenshots/search.png)
 
-### Basket
+### Bag
 
+- The bag page displays all the products the user has added to their shopping bag. The user can update the quantity of a product or remove a product from their shopping bag.
+![Bag page](./README_ASSESTS/project-screenshots/bag.png)
 
 ### Order From
 
+- The order form page allows the user to enter their delivery details and payment information. The user can also save their delivery details to their profile.
+![Order form](./README_ASSESTS/project-screenshots/checkout.png)
 
 ### Order Confirmation Page
 
 
 ### Profile Page
 
+- The profile page displays the user's delivery details and order history. The user can also update their delivery details on this page.
+![Profile page](./README_ASSESTS/project-screenshots/profile.png)
+
 
 ### Register, Log In & Log Out
 
+- The user can register for an account, log in and log out of their account.
+![Register page](./README_ASSESTS/project-screenshots/sign-up.png)
+![Log in page](./README_ASSESTS/project-screenshots/sign-in.png)
+![Log out page](./README_ASSESTS/project-screenshots/sign-out.png)
 
 ### Footer
 
+- The footer is visible on all pages and contains links to the site's social media pages and contact form as well as quick links to other pages.
+![Footer](./README_ASSESTS/project-screenshots/footer.png)
 
 ### Product Create
 
+- Admin users can create new products on the site.
+![Product create](./README_ASSESTS/project-screenshots/product-management-add.png)
 
 ### Product Edit
 
+- Admin users can edit existing products on the site.
+![Product edit](./README_ASSESTS/project-screenshots/product-management-edit.png)
 
 ### Contact Page
 
+- The contact page contains a contact form that allows the user to send a message to the site admin.
+![Contact page](./README_ASSESTS/project-screenshots/contact.png)
 
 ### Error Pages
 
+- The site contains custom error page for 404 errors.
+![404 error page](./README_ASSESTS/project-screenshots/404.png)
 
 ### Messages
 
+- The site displays toast messages to the user to inform them of the status of their actions.
+![Toast messages](./README_ASSESTS/project-screenshots/login-success.png)
+![Bag item Added](./README_ASSESTS/project-screenshots/bag-item-add-confirmation.png)
+![Bag item Update](./README_ASSESTS/project-screenshots/bag-update-confirmation.png)
+![Bag item remove](./README_ASSESTS/project-screenshots/bag-item-remove-confirmation.png)
+![Contact form Confrmation](./README_ASSESTS/project-screenshots/contact-form-confirmation.png)
+
+### Mailchimp Integration
+
+- The site is integrated with Mailchimp to allow users to sign up to the site's newsletter.
+![Mailchimp integration](./README_ASSESTS/project-screenshots/newsletter.png)
+![Mailchimp Confirmation](./README_ASSESTS/project-screenshots/mailchimp-subscription-confirmation.png)
+
+- The site is integrated with Mailchimp to allow users to sign up to the site's newsletter.
+![Mailchimp integration](./README_ASSESTS/project-screenshots/newsletter.png)
 
 ## Features Left to Implement
 

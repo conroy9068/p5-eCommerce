@@ -110,14 +110,16 @@ View user stories [Here]()
 
 ### Database Schema
 
+- The database schema was created using dbdiagram.io. The schema was created to show the relationships between the different models in the database.
+![Database Schema](./README_ASSESTS/database-schema.png)
 
 
 ### Wireframes
 
 Wireframes were created using Balsamiq. The wireframes were created for desktop with the goal being to create a responsive design. The wireframes were created for the following pages:
 
-- Home Page
-  - ![Wireframe for home page](./README_ASSESTS/wf-home.png)
+<details>
+<summary>Wireframes</summary>
 
 - Product List Page
   - ![Wireframe for all products](./README_ASSESTS/wf-all-products.png)
@@ -139,6 +141,13 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 
 - Newsletter Page
   - ![Wireframe for newsletter](./README_ASSESTS/wf-newsletter.png)
+
+
+</details>
+
+### Typography
+
+- Lato
 
 ### Typography
 
@@ -252,8 +261,10 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 ![Mailchimp integration](./README_ASSESTS/project-screenshots/newsletter.png)
 ![Mailchimp Confirmation](./README_ASSESTS/project-screenshots/mailchimp-subscription-confirmation.png)
 
-- The site is integrated with Mailchimp to allow users to sign up to the site's newsletter.
-![Mailchimp integration](./README_ASSESTS/project-screenshots/newsletter.png)
+### Custom newsletter form
+
+- The site contains a custom newsletter form that allows the user to sign up to the site's newsletter. This is no longer in use doe as the decision was made to use mailchimp for the newsletter.
+![Newsletter form](./README_ASSESTS/project-screenshots/custom-newsletter.png)
 
 ## Features Left to Implement
 
@@ -400,9 +411,6 @@ Browse to the [TESTING.md](TESTING.md) file for the full testing documentation.
 
 - typeings-extensions:
   - A backport of the standard library typing module for Python versions older than 3.8.
-
-### Validator Testing
-
 
 
 ## Web Marketing

@@ -6,7 +6,6 @@ from products.models import Product
 from .forms import RatingForm
 
 
-@login_required
 def rate_product(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     if request.method == 'POST':

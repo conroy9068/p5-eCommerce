@@ -4,7 +4,9 @@ import stripe
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.mail import BadHeaderError, send_mail
 from django.shortcuts import HttpResponse, get_object_or_404, redirect, render, reverse
+from django.template.loader import render_to_string
 from django.views.decorators.http import require_POST
 
 from bag.contexts import bag_contents
@@ -162,3 +164,27 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+
+
+def send_confirmation_email(request, email):
+    """Send the user a confirmation email."""
+    try:
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'email': email}
+        ).strip()
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'email': email, 'contact_email': settings.EMAIL_HOST_USER}
+        )
+
+        send_mail(
+            subject,
+            body,
+            settings.EMAIL_HOST_USER,
+            [email]
+        )
+    except BadHeaderError:
+        messages.error(request, "Invalid header found.")
+    except Exception as e:
+        messages.error(request, f"An error occurred: {e}")

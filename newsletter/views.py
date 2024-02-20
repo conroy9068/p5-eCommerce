@@ -28,7 +28,7 @@ def send_confirmation_email(request, email):
         subject = render_to_string(
             'newsletter/confirmation_emails/confirmation_email_subject.txt',
             {'email': email}
-        ).strip()  # Remove any leading/trailing whitespace
+        ).strip()
         body = render_to_string(
             'newsletter/confirmation_emails/confirmation_email_body.txt',
             {'email': email, 'contact_email': settings.EMAIL_HOST_USER}

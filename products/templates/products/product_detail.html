@@ -113,20 +113,6 @@
             </div>
         {% endfor %}
     </div>
-
-    <!-- Check if user is authenticated to show the rating form -->
-    {% if request.user.is_authenticated %}
-    <div class="rating-form">
-        <h5>Leave a Rating</h5>
-        <form method="post" action="{% url 'product_detail' product.id %}">
-            {% csrf_token %}
-            {{ rating_form.as_p }}
-            <button type="submit" name="rating_submit">Submit Rating</button>
-        </form>
-    </div>
-    {% else %}
-    <p><a href="{% url 'login' %}">Sign in</a> to leave a rating.</p>
-    {% endif %}
         </div>
     </div>
 {% endblock %}

@@ -102,7 +102,7 @@ STORYPOINTS: 4
 ### User Stories
 User stories where done using the agile methodology above. The user stories where created and managed using GitHub projects. A lin to all the user stories can be found below.
 
-View user stories [Here]()
+View user stories [Here](https://github.com/users/conroy9068/projects/5/views/2)
 
 
 ## Design
@@ -205,8 +205,10 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 - The order form page allows the user to enter their delivery details and payment information. The user can also save their delivery details to their profile.
 ![Order form](./README_ASSESTS/project-screenshots/checkout.png)
 
-### Order Confirmation Page
+### Checkout Confirmation Page
 
+- The order confirmation page displays the user's order details and order number. The user will also receive an email confirmation of their order.
+![Order confirmation page](./README_ASSESTS/project-screenshots/checkout-confirmation.png)
 
 ### Profile Page
 
@@ -249,22 +251,29 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 ### Messages
 
 - The site displays toast messages to the user to inform them of the status of their actions.
-![Toast messages](./README_ASSESTS/project-screenshots/login-success.png)
-![Bag item Added](./README_ASSESTS/project-screenshots/bag-item-add-confirmation.png)
-![Bag item Update](./README_ASSESTS/project-screenshots/bag-update-confirmation.png)
-![Bag item remove](./README_ASSESTS/project-screenshots/bag-item-remove-confirmation.png)
-![Contact form Confrmation](./README_ASSESTS/project-screenshots/contact-form-confirmation.png)
 
-### Mailchimp Integration
-
-- The site is integrated with Mailchimp to allow users to sign up to the site's newsletter.
-![Mailchimp integration](./README_ASSESTS/project-screenshots/newsletter.png)
-![Mailchimp Confirmation](./README_ASSESTS/project-screenshots/mailchimp-subscription-confirmation.png)
+- Login Success
+  - ![Toast messages](./README_ASSESTS/project-screenshots/login-success.png)
+- Item add
+  - ![Bag item Added](./README_ASSESTS/project-screenshots/bag-item-add-confirmation.png)
+- Bag Update
+  - ![Bag item Update](./README_ASSESTS/project-screenshots/bag-update-confirmation.png)
+- Bag item remove
+  - ![Bag item remove](./README_ASSESTS/project-screenshots/bag-item-remove-confirmation.png)
+- Contact Form
+  - ![Contact form Confrmation](./README_ASSESTS/project-screenshots/contact-form-confirmation.png)
+- Checkout Success
+  - ![Checkout form Confrmation](./README_ASSESTS/checkout-success-message.png)
 
 ### Custom newsletter form
 
-- The site contains a custom newsletter form that allows the user to sign up to the site's newsletter. This is no longer in use doe as the decision was made to use mailchimp for the newsletter.
+- The site contains a custom newsletter form that allows the user to sign up to the site's newsletter.
 ![Newsletter form](./README_ASSESTS/project-screenshots/custom-newsletter.png)
+
+### Mailchimp Integration
+- The site is integrated with Mailchimp to allow users to sign up to the site's newsletter.
+![Mailchimp integration](./README_ASSESTS/project-screenshots/newsletter.png)
+![Mailchimp Confirmation](./README_ASSESTS/project-screenshots/mailchimp-subscription-confirmation.png)
 
 ## Features Left to Implement
 

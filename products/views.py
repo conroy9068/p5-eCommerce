@@ -66,24 +66,37 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     ratings = product.rating_set.all()
     rating_form = RatingForm()
-    average_rating = product.rating_set.aggregate(Avg('score'))['score__avg'] or 0
+    average_rating = ratings.aggregate(Avg('score'))['score__avg'] or 0
     average_rating = round(average_rating, 1)
-    # context['average_rating'] = average_rating
+
+    # Set a variable to check if the user has already reviewed the product
+    user_has_reviewed = False
+
+    # Check if the user has already submitted a rating
+    if request.user.is_authenticated:
+        # Check if the user has already submitted a rating
+        user_has_reviewed = ratings.filter(user=request.user).exists()
 
     if request.method == 'POST' and 'rating_submit' in request.POST:
-        rating_form = RatingForm(request.POST)
-        if rating_form.is_valid():
-            rating = rating_form.save(commit=False)
-            rating.user = request.user
-            rating.product = product
-            rating.save()
-            return redirect('product_detail', product_id=product.id)
+        # Check if the user has not reviewed yet before processing the form
+        if not user_has_reviewed:
+            rating_form = RatingForm(request.POST)
+            if rating_form.is_valid():
+                rating = rating_form.save(commit=False)
+                rating.user = request.user
+                rating.product = product
+                rating.save()
+                return redirect('product_detail', product_id=product.id)
+        else:
+            messages.error(request, 'You have already reviewed this product.')
+            pass
 
     context = {
         'product': product,
         'ratings': ratings,
-        'rating_form': rating_form,
+        'rating_form': rating_form if not user_has_reviewed else None,
         'average_rating': average_rating,
+        'user_has_reviewed': user_has_reviewed,
     }
     return render(request, 'products/product_detail.html', context)
 

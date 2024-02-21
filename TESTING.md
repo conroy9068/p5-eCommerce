@@ -37,7 +37,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 ### CI Python Linter
 
-- I ran the CI Python Linter and the results were satisfactory. I'm only displaying the main views.py file results due to time contraints. But every .py file was linted using flake8 extension in VSCode and the results were satisfactory.
+- I ran the CI Python Linter and the results were satisfactory. I'm only displaying the main views.py file results due to time contraints. But every .py file was linted using flake8 extension in VSCode and the results were satisfactory. The is the exception of the settings.py file which had a few errors that were necessary for the code to function as intended.
 
 | App | Screenshot | Notes |
 | --- | --- | --- |

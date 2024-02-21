@@ -10,6 +10,24 @@ body {
     font-family: 'Lato';
 }
 
+.hero-background {
+    position: relative;
+    background-image: url('/static/media/man-working-in-factory.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #55718bc1;
+    z-index: 0;
+}
+
 .overlay {
     position: absolute;
     top: 0;
@@ -177,7 +195,8 @@ input[name='q']::placeholder {
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
-        max-width: 80%;
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 
@@ -262,7 +281,6 @@ input[name='q']::placeholder {
 
 /* Footer */
 footer {
-    margin-top: 50px;
     padding-top: 20px;
     padding-bottom: 10px;
 }
@@ -425,7 +443,7 @@ footer ul li {
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 116px;
+        padding-top: 100px;
     }
 
     body {

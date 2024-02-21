@@ -12,8 +12,23 @@ from .models import UserProfile
 
 @login_required
 def profile(request):
-    """ Display the user's profile. """
+    """
+    Display the user's profile.
 
+    This view function is responsible for rendering the user's profile page.
+    It retrieves the UserProfile object associated with the currently
+    authenticated user and displays it along with a form to update the profile
+    information. If the request method is POST, it processes the form data and
+    updates the profile if the form is valid. Otherwise, it simply
+    renders the profile page with the existing profile information.
+
+    Parameters:
+    - request: The HTTP request object.
+
+    Returns:
+    - A rendered HTML template displaying the user's profile page.
+
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -22,7 +37,9 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(request,
+                           ('Update failed. Please ensure the form is valid.')
+                           )
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
@@ -39,6 +56,17 @@ def profile(request):
 
 @login_required
 def order_history(request, order_number):
+    """
+    View function to display the order history for a specific order number.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        order_number (str): The order number.
+
+    Returns:
+        HttpResponse: The HTTP response object containing the rendered
+        template.
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

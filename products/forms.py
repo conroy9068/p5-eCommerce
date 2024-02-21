@@ -5,6 +5,22 @@ from .widgets import CustomClearableFileInput
 
 
 class ProductForm(forms.ModelForm):
+    """
+    A form for creating or updating a product.
+
+    Inherits from forms.ModelForm and provides additional functionality
+    for handling product data.
+
+    Attributes:
+        image (forms.ImageField): An optional image field for the product.
+        category (forms.ChoiceField): A field for selecting the category
+        of the product.
+
+    Methods:
+        __init__(self, *args, **kwargs): Initializes the form and sets
+        the choices for the category field.
+
+    """
 
     class Meta:
         model = Product

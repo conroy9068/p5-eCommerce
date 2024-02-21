@@ -2,26 +2,26 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="container-profile">
-        <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font mb-4">My Profile</h2>
-                <hr class="w-50 mb-4">
-            </div>
+<div class="container-profile">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font mb-4">My Profile</h2>
+            <hr class="w-50 mb-4">
         </div>
-        <div class="form-container">
+    </div>
+    <div class="form-container">
         <div class="row">
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Default Delivery Information</p>
@@ -44,38 +44,42 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% comment %} Loop through orders and display order details {% endcomment %}
                             {% for order in orders %}
-                                <tr>
-                                    <td>
-                                        <a href="{% url 'order_history' order.order_number %}"
+                            <tr>
+                                <td>
+                                    <a href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
-                                        </a>
-                                    </td>
-                                    <td>{{ order.date }}</td>
-                                    <td>
-                                        <ul class="list-unstyled">
-                                            {% for item in order.lineitems.all %}
-                                                <li class="small">
-                                                    {% if item.product.has_sizes %}
-                                                        Size {{ item.product.size|upper }}
-                                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                    <td>${{ order.grand_total }}</td>
-                                </tr>
+                                        {{ order.order_number|truncatechars:6 }}
+                                    </a>
+                                </td>
+                                <td>{{ order.date }}</td>
+                                <td>
+                                    <ul class="list-unstyled">
+                                        {% comment %} Loop through line items and display product details {% endcomment %}
+                                        {% for item in order.lineitems.all %}
+                                        <li class="small">
+                                            {% comment %} Check if product has sizes and display size {% endcomment %}
+                                            {% if item.product.has_sizes %}
+                                            Size {{ item.product.size|upper }}
+                                            {% endif %}{{ item.product.name }} x{{ item.quantity }}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                                <td>${{ order.grand_total }}</td>
+                            </tr>
                             {% endfor %}
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        </div>
-{% endblock %}
+    </div>
+    {% endblock %}
 
-{% block postloadjs %}
+    {% block postloadjs %}
     {{ block.super }}
+    {% comment %} Load countryfield.js to enable country dropdown {% endcomment %}
     <script src="{% static 'profiles/js/countryfield.js' %}"></script>
-{% endblock %}
+    {% endblock %}

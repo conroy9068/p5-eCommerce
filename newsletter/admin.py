@@ -9,7 +9,8 @@ class SubscriberAdmin(admin.ModelAdmin):
 
     Attributes:
         list_display (tuple): Fields to display in the admin list view.
-        search_fields (tuple): Fields to enable search functionality in the admin.
+        search_fields (tuple): Fields to enable search functionality
+        in the admin.
         readonly_fields (tuple): Fields that are read-only in the admin.
     """
     list_display = ('email',)

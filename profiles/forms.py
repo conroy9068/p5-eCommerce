@@ -4,6 +4,19 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
+    """
+    A form for updating user profile information.
+
+    This form extends the ModelForm class and is used to display and handle
+    user profile information. It excludes the 'user' field from the form.
+
+    Attributes:
+        model (UserProfile): The model associated with the form.
+        exclude (tuple): The fields to exclude from the form.
+
+    Methods:
+        __init__(self, *args, **kwargs): Initializes the form instance.
+    """
     class Meta:
         model = UserProfile
         exclude = ('user',)
@@ -15,7 +28,6 @@ class UserProfileForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-
             'default_phone_number': 'Phone Number',
             'default_postcode': 'Postal Code',
             'default_town_or_city': 'Town or City',
@@ -32,5 +44,7 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
+            self.fields[field].widget.attrs['class'] = (
+                'border-black rounded-0 profile-form-input'
+            )
             self.fields[field].label = False

@@ -9,17 +9,25 @@ from reviews.forms import RatingForm
 from .forms import ProductForm
 from .models import Category, Product
 
-# Create your views here.
-
 
 def all_products(request):
-    """ A view to show all products, including sorting and search queries """
+    """
+    A view to show all products, including sorting and search queries.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The HTTP response object containing the rendered
+        template.
+    """
 
     products = Product.objects.all()
     query = None
     categories = None
     sort = None
     direction = None
+    products = Product.objects.annotate(average_rating=Avg('rating__score'))
 
     if request.GET:
         if 'sort' in request.GET:
@@ -44,10 +52,11 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request, "You didn't enter search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -63,6 +72,17 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
+    """
+    View function that displays the details of a product.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        product_id (int): The ID of the product.
+
+    Returns:
+        HttpResponse: The HTTP response object containing the
+        rendered template.
+    """
     product = get_object_or_404(Product, pk=product_id)
     ratings = product.rating_set.all()
     rating_form = RatingForm()
@@ -103,7 +123,31 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
-    """ Add a product to the store """
+    """
+    Add a product to the store.
+
+    This function is responsible for adding a product to the store.
+    Only store owners (superusers) are allowed to perform this action.
+    The function handles both GET and POST requests.
+    If the request method is POST, the function validates the form data
+    and saves the product to the database. If the form is valid,
+    a success message is displayed and the user is redirected to the
+    product detail page. If the form is invalid, an error message is
+    displayed. If the request method is GET, an empty form
+    is rendered.
+
+    Args:
+    - request: The HTTP request object.
+
+    Returns:
+    - If the request method is POST and the form is valid, the function
+    redirects the user to the product detail page.
+    - If the request method is POST and the form is invalid, the function
+    renders the add_product.html template with the form and error message.
+    - If the request method is GET, the function renders the
+    add_product.html template with an empty form.
+
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -115,13 +159,13 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product.')
     else:
         form = ProductForm()
 
     template = 'products/add_product.html'
     context = {
-        'form': form,
+            'form': form,
     }
 
     return render(request, template, context)
@@ -129,7 +173,19 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
-    """ Edit a product in the store """
+    """
+    Edit a product in the store.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        product_id (int): The ID of the product to be edited.
+
+    Returns:
+        HttpResponse: The HTTP response object.
+
+    Raises:
+        Http404: If the product with the given ID does not exist.
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -142,7 +198,9 @@ def edit_product(request, product_id):
             messages.success(request, f'Successfully updated {product.name}')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, f'Failed to update {product.name}. Please ensure the form is valid.')
+            messages.error(request,
+                           f'Failed to update {product.name}. '
+                           f'Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -158,7 +216,19 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete a product from the store """
+    """
+    Delete a product from the store.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        product_id (int): The ID of the product to be deleted.
+
+    Returns:
+        HttpResponseRedirect: A redirect response to the products page.
+
+    Raises:
+        Http404: If the product with the given ID does not exist.
+    """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))

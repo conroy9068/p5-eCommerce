@@ -1,3 +1,6 @@
+{% comment %}
+  If the product has an image, display it. Otherwise, display a placeholder image.
+{% endcomment %}
 {% if item.product.image %}
 <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
 {% else %}

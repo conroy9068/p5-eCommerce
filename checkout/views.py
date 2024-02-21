@@ -5,7 +5,8 @@ from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import BadHeaderError, send_mail
-from django.shortcuts import HttpResponse, get_object_or_404, redirect, render, reverse
+from django.shortcuts import (HttpResponse, get_object_or_404, redirect,
+                              render, reverse)
 from django.template.loader import render_to_string
 from django.views.decorators.http import require_POST
 
@@ -21,14 +22,16 @@ from .models import Order, OrderLineItem
 @require_POST
 def cache_checkout_data(request):
     """
-    Cache the checkout data in the session and modify the Stripe PaymentIntent metadata.
+    Cache the checkout data in the session and modify the Stripe
+    PaymentIntent metadata.
 
     Args:
         request (HttpRequest): The HTTP request object.
 
     Returns:
-        HttpResponse: The HTTP response object with a status code of 200 if successful,
-                      or a status code of 400 with an error message if there is an exception.
+        HttpResponse:
+        The HTTP response object with a status code of 200 if successful,
+        or a status code of 400 with an error message if there is an exception.
     """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
@@ -103,21 +106,22 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in your bag wasn't found. "
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request, "There's nothing in your bag")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -154,7 +158,8 @@ def checkout_success(request, order_number):
         order_number (str): The order number.
 
     Returns:
-        HttpResponse: The HTTP response object containing the rendered template.
+        HttpResponse:
+        The HTTP response object containing the rendered template.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)

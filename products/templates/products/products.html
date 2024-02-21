@@ -14,6 +14,7 @@
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="logo-font">Products</h2>
+                {% comment %} Loop through the current categories {% endcomment %}
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
@@ -27,6 +28,7 @@
                 <div class="row mt-1 mb-2">
                     <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                         <div class="sort-select-wrapper w-50">
+                            {% comment %} This is the drop down containing all the filter product options {% endcomment %}
                             <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
@@ -42,6 +44,10 @@
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
+                            {% comment %}
+                                This if statement checks if there is a search term, current categories, or current sorting applied.
+                                If any of these conditions are true, it displays a link to the products home page.
+                            {% endcomment %}
                             {% if search_term or current_categories or current_sorting != 'None_None' %}
                                 <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
                             {% endif %}
@@ -50,6 +56,7 @@
                     </div>
                 </div>
                 <div class="row">
+                    {% comment %} Loop through the products and display them {% endcomment %}
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-200 border-0">
@@ -94,6 +101,7 @@
                                 </div>
                             </div>
                         </div>
+                        {% comment %} This if statement checks if the current product is divisible by 1, 2, 3, or 4. If it is, it adds a horizontal rule {% endcomment %}
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>
@@ -128,12 +136,13 @@
 
 {% block postloadjs %}
     {{ block.super }}
+    {% comment %} This script scrolls to the top of the page when the back to top button is clicked {% endcomment %}
     <script>
 		$('.btt-link').click(function(e) {
 			window.scrollTo(0,0)
 		})
 	</script>
-
+    {% comment %} This script changes the URL when the sort selector is changed {% endcomment %}
     <script>
         $('#sort-selector').change(function() {
             var selector = $(this);

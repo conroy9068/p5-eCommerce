@@ -7,7 +7,18 @@ from products.models import Product
 
 
 def bag_contents(request):
+    """
+    Retrieves the contents of the bag and calculates the total price,
+    product count, delivery cost, and grand total.
 
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        dict: A dictionary containing the bag items, total price, product count
+        delivery cost, free delivery delta, free delivery threshold,
+        and grand total.
+    """
     bag_items = []
     total = 0
     product_count = 0

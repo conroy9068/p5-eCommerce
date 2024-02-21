@@ -246,7 +246,7 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 ### Contact Page
 
 - The contact page contains a contact form that allows the user to send a message to the site admin.
-![Contact page](./README_ASSESTS/project-screenshots/contact.png)
+![Contact page](./README_ASSESTS/project-screenshots/contact-us.png)
 
 ### Error Pages
 
@@ -271,7 +271,7 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
   - ![Checkout form Confrmation](./README_ASSESTS/checkout-success-message.png)
 - Profile Update
   - ![Profile Update Confrmation](./README_ASSESTS/project-screenshots/profile-update-message.png)
-- Block user from viewing other users orders
+- Block signed in users from viewing other users orders
   - ![Block user from viewing other users orders](./README_ASSESTS/project-screenshots/block-user-from-viewing-other-users-orders.png)
 
 ### Custom newsletter form
@@ -279,7 +279,7 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 - The site contains a custom newsletter form that allows the user to sign up to the site's newsletter.
 ![Newsletter form](./README_ASSESTS/project-screenshots/custom-newsletter.png)
 
-### Mailchimp Integration
+### Mailchimp Integration (**Removed**)
 - The site is integrated with Mailchimp to allow users to sign up to the site's newsletter.
 ![Mailchimp integration](./README_ASSESTS/project-screenshots/newsletter.png)
 ![Mailchimp Confirmation](./README_ASSESTS/project-screenshots/mailchimp-subscription-confirmation.png)
@@ -295,9 +295,6 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 - Pop up window confirming add item to bag.
 - Star rating picker for product reviews.
 - Unsubscribe from newsletter feature.
-
-
-## Bugs
 
 
 # Testing
@@ -448,6 +445,10 @@ MarketFlex primarily serves garages, tradesmen, specialized and general contract
 
 ### Marketing and Customer Engagement Strategies:
 - Social Media and Online Marketing: Leveraging a Facebook business page and targeted SEO and ad campaigns to build our online presence, with plans to introduce TikTok for showcasing our latest products through engaging video content.
+
+- Facebook Business Page: Utilizing Facebook's business tools to create a comprehensive business page, we aim to engage with our audience, share product updates, and offer customer support.
+  ![Facebook Business Page](./README_ASSESTS/facebook-business-page.png)
+  Link to the Facebook Business Page [Here](https://www.facebook.com/profile.php?id=61556627759429)
 
 - Community Building: Offering valuable tips and tricks through our content, we aim to build a community of informed users, enhancing customer engagement and loyalty.
 

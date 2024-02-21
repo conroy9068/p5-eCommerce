@@ -37,6 +37,18 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    Process the checkout request and handle the payment using Stripe.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The HTTP response object.
+
+    Raises:
+        N/A
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -169,23 +181,28 @@ def checkout_success(request, order_number):
     return render(request, template, context)
 
 
-def send_confirmation_email(request, email):
+def send_confirmation_email(request, order):
     """Send the user a confirmation email."""
     try:
+        context = {
+            'order': order,
+            'contact_email': settings.EMAIL_HOST_USER
+        }
+
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
-            {'email': email}
+            context
         ).strip()
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
-            {'email': email, 'contact_email': settings.EMAIL_HOST_USER}
+            context
         )
 
         send_mail(
             subject,
             body,
             settings.EMAIL_HOST_USER,
-            [email]
+            [order.email]
         )
         print("Email sent successfully")
     except BadHeaderError:

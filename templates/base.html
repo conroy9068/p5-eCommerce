@@ -41,35 +41,12 @@
     </script>
     <!-- Stripe JS -->
     <script src="https://js.stripe.com/v3/"></script>
-    <!-- Mailchimp JS-->
-    <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script>
-        (function($) {
-            window.fnames = new Array();
-            window.ftypes = new Array();
-            fnames[0] = 'EMAIL';
-            ftypes[0] = 'email';
-            fnames[1] = 'FNAME';
-            ftypes[1] = 'text';
-            fnames[2] = 'LNAME';
-            ftypes[2] = 'text';
-            fnames[3] = 'ADDRESS';
-            ftypes[3] = 'address';
-            fnames[4] = 'PHONE';
-            ftypes[4] = 'phone';
-            fnames[5] = 'BIRTHDAY';
-            ftypes[5] = 'birthday';
-        }(jQuery));
-        var $mcj = jQuery.noConflict(true);
-    </script>
     {% endblock %}
 
     {% block extra_js %}
     {% endblock %}
-
     <!-- Favicon link -->
     <link rel="shortcut icon" href="{% static 'media/favicon.ico' %}">
-
     <title>MarketFlex {% block extra_title %}{% endblock %}</title>
 </head>
 
@@ -107,7 +84,11 @@
                             </div>
                         </a>
                         <div class="dropdown-menu border-0">
+                            {% comment %} If the user is authenticated, show the profile and logout links. If the user
+                            is not authenticated, show the login and register links. If the user is a superuser, show
+                            the product management link. {% endcomment %}
                             {% if request.user.is_authenticated %}
+                            {% comment %} If the user is a superuser, show the product management link. {% endcomment %}
                             {% if request.user.is_superuser %}
                             <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                             {% endif %}
@@ -125,10 +106,12 @@
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
+                                    {% comment %} If the grand total is greater than 0, show the grand total. If the
+                                    grand total is 0, show $0.00. {% endcomment %}
                                     {% if grand_total %}
                                     ${{ grand_total|floatformat:2 }}
                                     {% else %}
-                                    €0.00
+                                    $0.00
                                     {% endif %}
                                 </p>
                             </div>
@@ -143,7 +126,9 @@
                     aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                {% comment %} Mobile Navigation {% endcomment %}
                 {% include 'includes/mobile-top-header.html' %}
+                {% comment %} Main Navigation {% endcomment %}
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
@@ -181,7 +166,8 @@
                     <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'products' %}">Products</a></li>
                     <li><a href="{% url 'contact_us' %}">Contact</a></li>
-                    <li><a href="https://www.termsfeed.com/live/bdf08022-1951-46bb-be13-5e099ebc79d4" target="_blank">Privacy Policy</a></li>
+                    <li><a href="https://www.termsfeed.com/live/bdf08022-1951-46bb-be13-5e099ebc79d4"
+                            target="_blank">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-lg-4 text-center mb-4">
@@ -198,6 +184,7 @@
         </div>
     </footer>
 
+    {% comment %} Toasts {% endcomment %}
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -217,11 +204,11 @@
     {% endif %}
 
     {% block postloadjs %}
+    {% comment %} Toasts {% endcomment %}
     <script>
         $('.toast').toast('show');
     </script>
     {% endblock %}
-
 </body>
 
 </html>

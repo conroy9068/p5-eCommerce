@@ -269,6 +269,8 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
   - ![Contact form Confrmation](./README_ASSESTS/project-screenshots/contact-form-confirmation.png)
 - Checkout Success
   - ![Checkout form Confrmation](./README_ASSESTS/checkout-success-message.png)
+- Profile Update
+  - ![Profile Update Confrmation](./README_ASSESTS/project-screenshots/profile-update-message.png)
 
 ### Custom newsletter form
 

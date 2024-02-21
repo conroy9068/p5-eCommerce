@@ -5,8 +5,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.mail import BadHeaderError, send_mail
-from django.shortcuts import (HttpResponse, get_object_or_404, redirect,
-                              render, reverse)
+from django.shortcuts import HttpResponse, get_object_or_404, redirect, render, reverse
 from django.template.loader import render_to_string
 from django.views.decorators.http import require_POST
 
@@ -168,7 +167,7 @@ def checkout_success(request, order_number):
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
 
-    send_confirmation_email(request, order.email)
+    send_confirmation_email(request, order)
 
     if 'bag' in request.session:
         del request.session['bag']

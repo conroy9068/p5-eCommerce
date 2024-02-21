@@ -3,7 +3,6 @@ import json
 import stripe
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from django.core.mail import BadHeaderError, send_mail
 from django.shortcuts import (HttpResponse, get_object_or_404, redirect,
                               render, reverse)
@@ -96,7 +95,9 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for size, quantity in item_data['items_by_size'].items(
+
+                        ):
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,

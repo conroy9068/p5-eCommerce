@@ -71,7 +71,7 @@ def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     if order.user_profile.user != request.user:
-        messages.error(request, "You don't have permission to view this order.")
+        messages.error(request, "You don't have permission to view this order")
         return redirect(reverse('products'))
 
     messages.info(request, (

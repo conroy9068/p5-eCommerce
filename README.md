@@ -197,8 +197,8 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 ### Search, Order & Filter
 
 - The user can search for a product by name using the search bar. The user can also filter the products by category and sort the products by price.
-![Order & Filter](./README_ASSESTS/project-screenshots/search.png)
-![Search bar](./README_ASSESTS/project-screenshots/search.png)
+![Order & Filter](./README_ASSESTS/project-screenshots/order-filter.png)
+![Search bar](./README_ASSESTS/project-screenshots/search-bar.png)
 
 ### Bag
 

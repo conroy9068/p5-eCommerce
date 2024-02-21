@@ -15,6 +15,7 @@ body {
     background-image: url('/media/man-working-in-factory.jpg');
     background-size: cover;
     background-position: center;
+    max-width: 100%;
 }
 
 .hero-background::before {
@@ -195,7 +196,7 @@ input[name='q']::placeholder {
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
-        max-width: 100%;
+        max-width: 80%;
     }
 }
 

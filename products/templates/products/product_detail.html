@@ -162,13 +162,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
-{% comment %} Load the rating plugin and the quantity input script. To be finshed development {% endcomment %}
-<script>
-    // Rating Initialization
-    $(document).ready(function() {
-        $('#rateMe1').mdbRate();
-    });
-</script>
 {% comment %} Load the quantity input script {% endcomment %}
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}

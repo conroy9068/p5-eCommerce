@@ -189,6 +189,11 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 - The product detail view displays all the details of a product. The user can add the product to their shopping bag from this page.
 ![Product detail view](./README_ASSESTS/project-screenshots/product-details.png)
 
+### Product Review
+
+- The product review section allows the user to leave a review for a product.
+![Product review](./README_ASSESTS/project-screenshots/product-review.png)
+
 ### Search, Order & Filter
 
 - The user can search for a product by name using the search bar. The user can also filter the products by category and sort the products by price.
@@ -284,6 +289,8 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 - Setup address field to autofill if user is logged in and has details saved.
 - Pop up window to confirm deletion of a product.
 - Pop up window confirming add item to bag.
+- Star rating picker for product reviews.
+- Unsubscribe from newsletter feature.
 
 
 ## Bugs

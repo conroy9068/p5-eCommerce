@@ -271,6 +271,8 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
   - ![Checkout form Confrmation](./README_ASSESTS/checkout-success-message.png)
 - Profile Update
   - ![Profile Update Confrmation](./README_ASSESTS/project-screenshots/profile-update-message.png)
+- Block user from viewing other users orders
+  - ![Block user from viewing other users orders](./README_ASSESTS/project-screenshots/block-user-from-viewing-other-users-orders.png)
 
 ### Custom newsletter form
 

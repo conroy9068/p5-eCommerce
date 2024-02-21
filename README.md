@@ -1,6 +1,7 @@
 # MarketFlex
+## Table of Contents
 
-- [MarketFlex - Overview](#overview)
+- [Overview](#overview)
 - [User Experience (UX)](#user-experience-ux)
   - [Agile Development](#agile-development)
     - [User Stories](#user-stories)
@@ -14,6 +15,7 @@
   - [Landing Page](#landing-page)
   - [Product List Page](#product-list-page)
   - [Product Detail View](#product-detail-view)
+  - [Product Review](#product-review)
   - [Search, Order & Filter](#search-order--filter)
   - [Basket](#basket)
   - [Order Form](#order-from)
@@ -48,13 +50,13 @@
 
 ## Overview
 
-MarketFlex is a fully responsive e-commerce platform built using Django. This site allows people to browse and purchase tools and equipment used in many inductries like the automotive and metal fabrication industy to name two.
+MarketFlex is a fully responsive e-commerce platform built using Django. This site allows people to browse and purchase tools and equipment used in many industries like the automotive and metal fabrication industry to name two.
 
-The site allows user to search for specific items they are looking for and filter all items on a number of parameters. The site allows them to create a user profile so that they can quickly purchase items each time they visist the site and also keeps a record of there past orders.
+The site allows users to search for specific items they are looking for and filter all items on a number of parameters. The site allows them to create a user profile so that they can quickly purchase items each time they visit the site and also keeps a record of there past orders.
 
-User can make purchasesas a guest without having a profile also if they chose not to register with an account.
+Users can make purchases as a guest without having a profile also if they chose not to register with an account.
 
-The option to sign up to newletters is also avaiable to the user, this will keep them up to date with the latest promotions and sales on offer.
+The option to sign up to newsletters is also available to the user, this will keep them up to date with the latest promotions and sales on offer.
 
 The site also has admin users, admin users have access to create, update and delete products on the site.
 
@@ -68,7 +70,7 @@ View the live project [Here](https://p5-ecommerce-fb6cb413b539.herokuapp.com/)
 
 The agile methodology was used in the development of this project. This is when each feature to the site is broken down into smaller tasks and each then is developed. The tool used to manage this was GitHub projects.
 
-The breakdown of tasks was done using user stories, each story would describe the task the end user would like to do to achieve a desire goal. The user stories contained acceptance criteria that outline what the site needed to do in order to meet the requirements of the user story. Then there are tasks which described the technical work thats needed to be done to complete each User Story.
+The breakdown of tasks was done using user stories, each story would describe the task the end user would like to do to achieve a desired goal. The user stories contained acceptance criteria that outline what the site needed to do in order to meet the requirements of the user story. Then there are tasks which described the technical work thats needed to be done to complete each User Story.
 
 Story points are an estimated level of effort the developer thinks will be required to develop that feature.
 
@@ -149,9 +151,7 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 
 - Lato
 
-### Typography
-
-- Lato
+  - The decision to use Lato for the MarketFlex platform likely stems from its versatility and readability. Lato offers a balance between serious and friendly tones, making it suitable for a wide range of applications. Its well-structured characters enhance readability, which is crucial for an e-commerce platform where clear communication is key.
 
 ### Colours
 ![Image Description](./README_ASSESTS/color-palette.png)
@@ -287,7 +287,7 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 ## Features Left to Implement
 
 - Ability to add reviews for products
-- Stock management system to track stock levels and allow admin to add stock. The sale of an item would also update the stockm level automatically.
+- Stock management system to track stock levels and allow admin to add stock. The sale of an item would also update the stock level automatically.
 - A blog section to keep users up to date with the latest news and promotions.
 - An about us page to give the user more information about the company.
 - Setup address field to autofill if user is logged in and has details saved.
@@ -410,9 +410,6 @@ Browse to the [TESTING.md](TESTING.md) file for the full testing documentation.
 
 - requests:
   - A library that allows you to send HTTP requests using Python.
-
-- requests-oauthlib:
-  - A library that provides OAuth support for Python requests.
 
 - requests-oauthlib:
   - A library that provides OAuth support for Python requests.
@@ -542,7 +539,7 @@ The robots.txt file was created and uploaded to the root directory of the site.
 * [Balsamiq](https://balsamiq.com/wireframes/) - Low Fidelity Wireframes
 * [W3C Validator](https://validator.w3.org/) - Validator that checks the markup validity for Web Documents in HTML.
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - Validator that checks CSS validity.
-* [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) - Validator that checks syntax and stlistic problems in Python code.
+* [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) - Validator that checks syntax and stylistic problems in Python code.
 * [Am I responsive](https://ui.dev/amiresponsive) - Generates Responsive images for your website.
 * [Chrome DevTools and Lighthouse](https://developer.chrome.com/docs/devtools/) - Web Developer Tools.
 * [DB Diagram](https://dbdiagram.io/home) - Database Schema Design Tool.

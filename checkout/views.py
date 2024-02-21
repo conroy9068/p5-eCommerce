@@ -20,6 +20,16 @@ from .models import Order, OrderLineItem
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    Cache the checkout data in the session and modify the Stripe PaymentIntent metadata.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The HTTP response object with a status code of 200 if successful,
+                      or a status code of 400 with an error message if there is an exception.
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -138,17 +148,22 @@ def checkout(request):
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        order_number (str): The order number.
+
+    Returns:
+        HttpResponse: The HTTP response object containing the rendered template.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
 
-        # Save the user's info
         if save_info:
             profile_data = {
                 'default_phone_number': order.phone_number,
@@ -181,7 +196,20 @@ def checkout_success(request, order_number):
 
 
 def send_confirmation_email(request, order):
-    """Send the user a confirmation email."""
+    """
+    Send the user a confirmation email.
+
+    Args:
+        request: The HTTP request object.
+        order: The order object.
+
+    Raises:
+        BadHeaderError: If an invalid header is found.
+        Exception: If any other error occurs.
+
+    Returns:
+        None
+    """
     try:
         context = {
             'order': order,

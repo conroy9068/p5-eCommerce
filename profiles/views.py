@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
 
 from checkout.models import Order
 
@@ -68,6 +69,10 @@ def order_history(request, order_number):
         template.
     """
     order = get_object_or_404(Order, order_number=order_number)
+
+    if order.user_profile.user != request.user:
+        messages.error(request, "You don't have permission to view this order.")
+        return redirect(reverse('products'))
 
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '

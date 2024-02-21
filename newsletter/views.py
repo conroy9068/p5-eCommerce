@@ -8,6 +8,18 @@ from .forms import SubscriberForm
 
 
 def subscribe(request):
+    """
+    View function for subscribing to the newsletter.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: The HTTP response object.
+
+    Raises:
+        None
+    """
     if request.method == 'POST':
         form = SubscriberForm(request.POST)
         if form.is_valid():
@@ -23,7 +35,20 @@ def subscribe(request):
 
 
 def send_confirmation_email(request, email):
-    """Send the user a confirmation email."""
+    """
+    Send the user a confirmation email.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+        email (str): The email address of the user.
+
+    Raises:
+        BadHeaderError: If an invalid header is found.
+        Exception: If any other error occurs.
+
+    Returns:
+        None
+    """
     try:
         subject = render_to_string(
             'newsletter/confirmation_emails/confirmation_email_subject.txt',

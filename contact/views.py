@@ -9,6 +9,25 @@ from .models import Contact
 
 
 class ContactCreateView(CreateView):
+    """
+    View for creating a new contact.
+
+    Inherits from CreateView, which provides the functionality for
+    creating a new object based on a model and a form.
+
+    Attributes:
+        model (Model): The model class that the view will create an
+        instance of.
+        form_class (Form): The form class that the view will use for data
+        validation and rendering.
+        template_name (str): The name of the template to be
+        used for rendering the view.
+
+    Methods:
+        form_valid(form): Overrides the form_valid method of CreateView to
+        save the form data, send an email,
+        and display success or error messages.
+    """
     model = Contact
     form_class = ContactForm
     template_name = 'contact/contact_form.html'

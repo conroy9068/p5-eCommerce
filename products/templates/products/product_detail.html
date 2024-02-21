@@ -15,6 +15,7 @@
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
+                {% comment %} If the product has an image, display it. If not, display a placeholder image. {% endcomment %}
                 {% if product.image %}
                 <a href="{{ product.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -26,6 +27,7 @@
                 {% endif %}
             </div>
         </div>
+        <!--Product details -->
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
                 <p class="mb-0">{{ product.name }}</p>
@@ -37,11 +39,13 @@
                     </a>
                 </p>
                 {% endif %}
+                {% comment %} Display average rating if it exists, otherwise display "No Rating" {% endcomment %}
                 {% if average_rating %}
                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ average_rating }} / 5</small>
                 {% else %}
                 <small class="text-muted">No Rating</small>
                 {% endif %}
+                {% comment %} If the user is a superuser, display edit and delete buttons {% endcomment %}
                 {% if request.user.is_superuser %}
                 <small class="ml-3">
                     <a href="{% url 'edit_product' product.id %}">Edit</a> |
@@ -52,6 +56,7 @@
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
+                        {% comment %} If the product has sizes, display a size selector {% endcomment %}
                         {% with product.has_sizes as s %}
                         {% if s %}
                         <div class="col-12">
@@ -104,50 +109,52 @@
                 </form>
             </div>
             <!-- Display existing ratings -->
-            <!-- Display existing ratings -->
-<div class="product-ratings mt-4">
-    <h5>User Ratings</h5>
-    <div class="ratings-list">
-        {% for rating in ratings %}
-        <div class="user-rating p-3 border rounded mb-2">
-            <div class="rating-header d-flex justify-content-between align-items-center">
-                <strong class="rating-user">Username: {{ rating.user.username }}</strong>
-                <span class="rating-score badge badge-primary">Rated {{ rating.score }} out of 5</span>
+            <div class="product-ratings mt-4">
+                <h5>User Ratings</h5>
+                <div class="ratings-list">
+                    {% comment %} If there are ratings, display them. If not, display a message {% endcomment %}
+                    {% for rating in ratings %}
+                    <div class="user-rating p-3 border rounded mb-2">
+                        <div class="rating-header d-flex justify-content-between align-items-center">
+                            <strong class="rating-user">Username: {{ rating.user.username }}</strong>
+                            <span class="rating-score badge badge-primary">Rated {{ rating.score }} out of 5</span>
+                        </div>
+                        {% comment %} If a comment exists, display it. If not, display a message {% endcomment %}
+                        {% if rating.comment %}
+                        <p class="rating-comment mt-2">Comment: {{ rating.comment }}</p>
+                        {% else %}
+                        <p class="rating-comment mt-2 text-muted">No comment provided.</p>
+                        {% endif %}
+                    </div>
+                    {% empty %}
+                    <p class="text-muted">There are no reviews yet. Be the first to review this product!</p>
+                    {% endfor %}
+                </div>
             </div>
-            {% if rating.comment %}
-            <p class="rating-comment mt-2">Comment: {{ rating.comment }}</p>
+            {% comment %} If the user is authenticated, display the rating form. If not, display a message {% endcomment %}
+            {% if request.user.is_authenticated %}
+            {% comment %} If the user has not reviewed the product, display the rating form. If they have, display a message {% endcomment %}
+            {% if not user_has_reviewed %}
+            <div class="rating-form mt-4">
+                <h5>Leave a Rating</h5>
+                <form method="post" action="{% url 'product_detail' product.id %}" class="pt-3">
+                    {% csrf_token %}
+                    {{ rating_form.as_p }}
+                    <div class="form-group">
+                        <button type="submit" name="rating_submit"
+                            class="btn btn-success rounded-0 text-uppercase">Submit Review</button>
+                    </div>
+                </form>
+            </div>
             {% else %}
-            <p class="rating-comment mt-2 text-muted">No comment provided.</p>
-            {% endif %}
-        </div>
-        {% empty %}
-        <p class="text-muted">There are no reviews yet. Be the first to review this product!</p>
-        {% endfor %}
-    </div>
-</div>
-
-{% if request.user.is_authenticated %}
-    {% if not user_has_reviewed %}
-    <div class="rating-form mt-4">
-        <h5>Leave a Rating</h5>
-        <form method="post" action="{% url 'product_detail' product.id %}" class="pt-3">
-            {% csrf_token %}
-            {{ rating_form.as_p }}
-            <div class="form-group">
-                <button type="submit" name="rating_submit" class="btn btn-success rounded-0 text-uppercase">Submit Review</button>
+            <div class="alert alert-info" role="alert">
+                You have already reviewed this product.
             </div>
-        </form>
-    </div>
-    {% else %}
-    <div class="alert alert-info" role="alert">
-        You have already reviewed this product.
-    </div>
-    {% endif %}
-{% else %}
-    <p class="mt-4"><a href="{% url 'account_login' %}" class="btn btn-outline-primary rounded-0 text-uppercase mr-2">Sign in</a> to leave a rating.</p>
-{% endif %}
-
-
+            {% endif %}
+            {% else %}
+            <p class="mt-4"><a href="{% url 'account_login' %}"
+                    class="btn btn-outline-primary rounded-0 text-uppercase mr-2">Sign in</a> to leave a rating.</p>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -155,11 +162,13 @@
 
 {% block postloadjs %}
 {{ block.super }}
+{% comment %} Load the rating plugin and the quantity input script. To be finshed development {% endcomment %}
 <script>
     // Rating Initialization
     $(document).ready(function() {
         $('#rateMe1').mdbRate();
     });
 </script>
+{% comment %} Load the quantity input script {% endcomment %}
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}

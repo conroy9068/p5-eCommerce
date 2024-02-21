@@ -3,33 +3,32 @@
 {% load crispy_forms_tags %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
 <div class="container-fluid">
-<div class="col text-center mt-3">
-    <h2 class="logo-font mb-4">Contact Us</h2>
-    <hr class="w-50 mb-4">
-
-<div class="contact-container">
-    <div class="contact-form">
-        <form method="post" class="form-horizontal" enctype="multipart/form-data">
-            {% csrf_token %}
-            <fieldset class="form-group custom-form-outer-container">
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group custom-form-button-container">
-                <button class="btn black-button subscribe" type="submit">Send</button>
+    <div class="col text-center mt-3">
+        <h2 class="logo-font mb-4">Contact Us</h2>
+        <hr class="w-50 mb-4">
+        <div class="contact-container">
+            <div class="contact-form">
+                <form method="post" class="form-horizontal" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group custom-form-outer-container">
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group custom-form-button-container">
+                        <button class="btn black-button subscribe" type="submit">Send</button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
-</div>
-</div>
 </div>
 
 {% endblock %}

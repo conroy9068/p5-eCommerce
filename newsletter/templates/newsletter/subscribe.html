@@ -2,45 +2,36 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
 <div class="container-fluid">
     <div class="col text-center mt-3">
-        <h2 class="logo-font mb-4">Subscribe to our Newsletter        </h2>
+        <h2 class="logo-font mb-4">Subscribe to our Newsletter </h2>
         <hr class="w-50">
-<div class="newsletter-container">
-    <div class="newsletter-form">
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <fieldset class="form-group custom-form-outer-container">
-                <legend class="text-center default-page-header">Subscribe to our Newsletter</legend>
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group custom-form-button-container">
-                <button class="btn black-button subscribe" type="submit">Subscribe</button>
+        <div class="newsletter-container">
+            <div class="newsletter-form">
+                {% comment %} Form to subscribe to the newsletter {% endcomment %}
+                <form method="POST" enctype="multipart/form-data" class="form-horizontal">
+                    {% csrf_token %}
+                    <fieldset class="form-group custom-form-outer-container">
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group custom-form-button-container">
+                        <button class="btn black-button subscribe" type="submit">Subscribe</button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
-</div>
-</div>
 </div>
 {% endblock %}
 
 {% block extra_js %}
-    <script>
-        $(document).ready(function() {
-            $('.subscribe').click(function() {
-                $('.newsletter-form').hide();
-                $('.newsletter-container').append('<p class="text-center">Thank you for subscribing!</p>');
-            });
-        });
-    </script>
 {% endblock %}

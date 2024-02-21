@@ -2,11 +2,11 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
@@ -14,18 +14,17 @@
     <div class="row">
         <div class="col text-center mt-3">
             <h2 class="logo-font mb-4">About Us</h2>
-            {% for c in current_categories %}
-            <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
-                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
-            </a>
-            {% endfor %}
             <hr class="w-50 mb-4">
         </div>
     </div>
     <div class="row mb-4">
         <div class="col">
             <p class="lead">
-                Welcome to MarketFlex, Ireland's premier destination for high-quality tools and equipment tailored to meet the diverse needs of garages, tradesmen, and contractors. With over two decades of dedicated service, we have established ourselves as the leading suppliers in the industrial and commercial sectors, offering unparalleled access to a wide range of products, from advanced abrasives to comprehensive surface finishing systems.
+                Welcome to MarketFlex, Ireland's premier destination for high-quality tools and equipment tailored to
+                meet the diverse needs of garages, tradesmen, and contractors. With over two decades of dedicated
+                service, we have established ourselves as the leading suppliers in the industrial and commercial
+                sectors, offering unparalleled access to a wide range of products, from advanced abrasives to
+                comprehensive surface finishing systems.
             </p>
         </div>
     </div>
@@ -34,30 +33,45 @@
             <div class="mission-section">
                 <h3 class="section-title">Our Mission</h3>
                 <p class="mission-text">
-                    At MarketFlex, our mission is simple: to provide our customers with the tools and equipment they need to succeed. Whether you're in automotive refinishing, metal fabrication, woodworking, or any related industry, we're here to supply you with top-tier products at near cost price, ensuring value without compromise.
+                    At MarketFlex, our mission is simple: to provide our customers with the tools and equipment they
+                    need to succeed. Whether you're in automotive refinishing, metal fabrication, woodworking, or any
+                    related industry, we're here to supply you with top-tier products at near cost price, ensuring value
+                    without compromise.
                 </p>
             </div>
-
             <div class="advantage-section">
                 <h3 class="section-title">Our Advantage</h3>
                 <ul class="advantage-list">
                     <li class="advantage-item">
-                        <span class="advantage-heading">Expertise:</span> Leveraging over 24 years of industry experience, MarketFlex brings you the best in machine tools and metalworking equipment. Our team of abrasives experts is always at your service, ready to offer insights and solutions tailored to your unique requirements.
+                        <span class="advantage-heading">Expertise:</span> Leveraging over 24 years of industry
+                        experience, MarketFlex brings you the best in machine tools and metalworking equipment. Our team
+                        of abrasives experts is always at your service, ready to offer insights and solutions tailored
+                        to your unique requirements.
                     </li>
                     <li class="advantage-item">
-                        <span class="advantage-heading">Quality and Variety:</span> From Rupes detailing packages for automotive care to specialized woodworking and metal fabrication tools, our product range is meticulously curated to cater to professional needs across various sectors.
+                        <span class="advantage-heading">Quality and Variety:</span> From Rupes detailing packages for
+                        automotive care to specialized woodworking and metal fabrication tools, our product range is
+                        meticulously curated to cater to professional needs across various sectors.
                     </li>
                     <li class="advantage-item">
-                        <span class="advantage-heading">Customer-Centric Approach:</span> We understand the importance of reliable support and quick delivery. Our local representatives across Ireland are committed to assisting you with product queries, demonstrations, and after-sales support, ensuring a seamless experience from browsing to purchase and beyond.
+                        <span class="advantage-heading">Customer-Centric Approach:</span> We understand the importance
+                        of reliable support and quick delivery. Our local representatives across Ireland are committed
+                        to assisting you with product queries, demonstrations, and after-sales support, ensuring a
+                        seamless experience from browsing to purchase and beyond.
                     </li>
                     <li class="advantage-item">
-                        <span class="advantage-heading">Innovation and Education:</span> MarketFlex is more than just a supplier; we're your partner in growth. Through our upcoming platforms like TikTok and our established Facebook business page, we share the latest industry trends, product demonstrations, and professional tips and tricks, fostering a community of well-informed and skilled professionals.
+                        <span class="advantage-heading">Innovation and Education:</span> MarketFlex is more than just a
+                        supplier; we're your partner in growth. Through our upcoming platforms like TikTok and our
+                        established Facebook business page, we share the latest industry trends, product demonstrations,
+                        and professional tips and tricks, fostering a community of well-informed and skilled
+                        professionals.
                     </li>
                 </ul>
             </div>
         </div>
         <div class="col-md-6">
-            <img class="img-fluid" src="{% static 'media/man-working-in-factory.jpg' %}" alt="Man working on factory floor">
+            <img class="img-fluid" src="{% static 'media/man-working-in-factory.jpg' %}"
+                alt="Man working on factory floor">
         </div>
     </div>
 </div>

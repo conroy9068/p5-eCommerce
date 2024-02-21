@@ -4,6 +4,16 @@ from django.utils import timezone
 
 
 class Contact(models.Model):
+    """
+    Represents a contact in the system.
+
+    Attributes:
+        name (str): The name of the contact.
+        email (str): The email address of the contact.
+        message (str): The message sent by the contact.
+        created_at (datetime): The date and time when the contact was created.
+    """
+
     class Meta:
         verbose_name_plural = 'Contacts'
 

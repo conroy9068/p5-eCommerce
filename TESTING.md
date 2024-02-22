@@ -34,6 +34,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | Contact | ![screenshot](./README_ASSESTS/contact-html-validation.png) | Pass: No Errors |
 | Checkout | ![screenshot](./README_ASSESTS/checkout-html-validation.png) | Pass: No Errors |
 | Checkout Success | ![screenshot](./README_ASSESTS/checkout-success-html-validation.png) | Pass: No Errors |
+| Newsletter | ![screenshot](./README_ASSESTS/newsletter-html-validation.png) | Pass: No Errors |
 
 ### CI Python Linter
 

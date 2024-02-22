@@ -295,7 +295,6 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 - Pop up window confirming add item to bag.
 - Star rating picker for product reviews.
 - Unsubscribe from newsletter feature.
-- Set up card height so that each product card is the same height.
 
 
 # Testing

@@ -16,6 +16,7 @@ body {
     background-size: cover;
     background-position: center;
     max-width: 100%;
+    height: 100%;
 }
 
 .hero-background::before {
@@ -25,7 +26,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #55718bc1;
+    background-color: #55718bb0;
     z-index: 0;
 }
 

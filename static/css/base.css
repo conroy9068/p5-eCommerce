@@ -127,21 +127,21 @@ input[name='q']::placeholder {
 .card {
     display: flex;
     flex-direction: column;
-    height: 100%; /* Make card height 100% to fill the parent container */
+    height: 100%;
 }
 
 .card-img-top {
     width: 100%;
-    height: 300px; /* Fixed height for the image */
-    object-fit: scale-down; /* Cover the container without distorting the image */
-    background-position: center; /* Center the image within the container */
+    height: 300px;
+    object-fit: scale-down;
+    background-position: center;
 }
 
 .card-body {
-    flex-grow: 1; /* Allow the card body to grow and fill available space */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute space evenly within the card body */
+    justify-content: space-between;
 }
 
 /* ------------------------------- bootstrap toasts */

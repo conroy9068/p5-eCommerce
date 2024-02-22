@@ -1,5 +1,6 @@
 from django.contrib import messages
-from django.shortcuts import HttpResponse, get_object_or_404, redirect, render, reverse
+from django.shortcuts import (HttpResponse, get_object_or_404, redirect,
+                              render, reverse)
 
 from products.models import Product
 
@@ -64,13 +65,17 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if isinstance(bag[item_id], int):
                 # Convert existing quantity to the expected dictionary format
-                bag[item_id] = {'items_by_size': {'no_size': bag[item_id] + quantity}}
+                bag[item_id] = {
+                    'items_by_size': {'no_size': bag[item_id] + quantity}
+                    }
             else:
                 # Increment quantity if it's already in the correct format
                 bag[item_id]['items_by_size'].setdefault('no_size', 0)
                 bag[item_id]['items_by_size']['no_size'] += quantity
             messages.success(
-                request, f'Updated {product.name} quantity to {bag[item_id]["items_by_size"]["no_size"]}')
+                request,
+                f'Updated {product.name} quantity '
+                f'to {bag[item_id]["items_by_size"]["no_size"]}')
         else:
             bag[item_id] = {'items_by_size': {'no_size': quantity}}
             messages.success(request, f'Added {product.name} to your bag')

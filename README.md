@@ -279,6 +279,10 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 - The site contains a custom newsletter form that allows the user to sign up to the site's newsletter.
 ![Newsletter form](./README_ASSESTS/project-screenshots/custom-newsletter.png)
 
+### Privacy Policy
+
+- The site contains a privacy policy page that informs the user of the site's privacy policy. This policy is GDPR compliant. It can be found at the bottom of each page in the footer. It was generated using [TermsFeed](https://www.termsfeed.com/privacy-policy-generator/ )
+
 ### Mailchimp Integration (**Removed**)
 - The site is integrated with Mailchimp to allow users to sign up to the site's newsletter.
 ![Mailchimp integration](./README_ASSESTS/project-screenshots/newsletter.png)

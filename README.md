@@ -62,7 +62,7 @@ The site also has admin users, admin users have access to create, update and del
 
 View the live project [Here](https://p5-ecommerce-fb6cb413b539.herokuapp.com/)
 
-![Responsive Design Screenshot](README/assets/am-i-responsive.png)
+![Responsive Design Screenshot](/README_ASSESTS/am-i-responsive.png)
 
 ## User Experience (UX)
 

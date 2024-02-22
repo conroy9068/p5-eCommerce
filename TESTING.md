@@ -209,6 +209,7 @@ I have conducted a series of manual tests on my application.
 | Confirmation email missing details                             | ![screenshot](./README_ASSESTS/confirmation-email-missing-info.png)   | The issue was that the email was not being sent with the correct details. Fixed by passing the correct context to the `send_confirmation_email` function.                    |
 | Subscribe to newsletter JS was hiding the field and showing the submit was successful but it wasn't and never submitted. |                                                                   | Removed custom JS and used the default Django form submit and `views.py` code to handle the form submission and user feedback with toast.                                      |
 | Product rating not displaying on all products page             | ![screenshot](./README_ASSESTS/ratings-not-showing-on-all-products.png)| The issue was that the product rating was not being passed to the context. Fixed by adding the product rating to the context in the `views.py` file.                          |
+| Product Size max_length was set to 2 which caused checkout to fail when no_size was selected. |  | The issue was that the product size max_length was set to 2 which caused checkout to fail when no_size was selected. Fixed by setting the max_length to 20. |
 
 
 

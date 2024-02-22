@@ -10,9 +10,11 @@
   - [Wireframes](#wireframes)
   - [Typography](#typography)
   - [Colours](#colours)
+  - [Icons](#icons)
 - [Features](#features)
   - [Nav Bar](#nav-bar)
   - [Landing Page](#landing-page)
+  - [About Page](#about-page)
   - [Product List Page](#product-list-page)
   - [Product Detail View](#product-detail-view)
   - [Product Review](#product-review)
@@ -28,13 +30,19 @@
   - [Contact Page](#contact-page)
   - [Error Pages](#error-pages)
   - [Messages](#messages)
+  - [Custom newsletter form](#custom-newsletter-form)
+  - [Privacy Policy](#privacy-policy)
+  - [Mailchimp Integration (**Removed**)](#mailchimp-integration-removed)
 - [Features Left to Implement](#features-left-to-implement)
-- [Bugs](#bugs)
 - [Testing](#testing)
 - [Technologies Used](#technologies-used)
   - [Languages Used](#languages-used)
   - [Libraries & Frameworks](#libraries--frameworks)
 - [Web Marketing](#web-marketing)
+  - [Key Advantages for MarketFlex:](#key-advantages-for-marketflex)
+  - [Target Audience:](#target-audience)
+  - [Marketing and Customer Engagement Strategies:](#marketing-and-customer-engagement-strategies)
+  - [Site Features and User Experience:](#site-features-and-user-experience)
 - [Search Engine Optimization](#search-engine-optimization)
   - [sitemap.xml](#sitemapxml)
   - [robots.txt](#robotstxt)
@@ -165,54 +173,65 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 - #E8F1F2: A very light blue with a hint of grey, excellent for backgrounds or for a light, airy feeling in the design.
 
 
+### Icons
+
+- [Font Awesome](https://fontawesome.com/) - Used for all icons on the site.
+- [LeonardoAI](https://leonardo.ai/) - Used to generate the favicon for the site.
+
 ## Features
 
 ### Nav Bar
 
-- The navigation bar is fixed to the top of the page and is visible on all pages. Its optimised for mobile and desktop view.
+- The navigation bar is fixed to the top of the page and is visible on all pages. Its optimised for mobile and desktop view. The navigation bar contains links to all the pages on the site as well as a search bar and a link to the user's shopping bag. There is also a link to the user's profile if they are logged in. If the user is an admin user they will also see a link to the product management page. When opened on mobile the navigation bar collapses into a hamburger menu.
 ![Navigation bar on desktop](./README_ASSESTS/project-screenshots/nav-desktop.png)
 ![Navigation bar on mobile](./README_ASSESTS/project-screenshots/nav-mobile.png)
 
 ### Landing Page
 
-- The landing page is the first page the user sees when they visit the site. It contains a hero image and a call to action button to view all products.
+- The landing page is the first page the user sees when they visit the site. It contains a hero image and a call to action button to view all products. The image was downloaded from [Unsplash](https://unsplash.com/photos/man-wearing-black-hoodie-using-welding-tool-DB_q6rPFnBM).
 ![Landing page](./README_ASSESTS/project-screenshots/landing-page.png)
+
+### About Page
+
+- The about page contains information about the site and the company. Its has a brief history of the company and its mission statement and also a list of advantages the company has over its competitors. There is also the image of the man welding from the landing page.
+![About page](./README_ASSESTS/project-screenshots/about-us.png)
 
 ### Product List Page
 
-- The product list page displays all the products available on the site. The user can filter the products by category and sort the products by price.
+- The product list page displays all the products available on the site. The user can filter the products by category and sort the products by price, name and rating. Users can also search for a product by name using the search bar. The avergae rating of the product is also displayed on the product card.
 ![Product list page](./README_ASSESTS/project-screenshots/product-details.png)
 
 
 ### Product Detail View
 
-- The product detail view displays all the details of a product. The user can add the product to their shopping bag from this page.
+- The product detail view displays all the details of a product. The user can select can select a size if the product has different sizes. The user can also select the quantity they want of the product to add to their shopping bag from this page.
 ![Product detail view](./README_ASSESTS/project-screenshots/product-details.png)
 
 ### Product Review
 
-- The product review section allows the user to leave a review for a product.
+- The product review section allows the user to leave a review for a product. The reviews are visible to all users. The user can also see the average rating of the product. Only logged in users can leave a review. And it is one review per user per product. User who are not logged in will be prompted to log in to leave a review.
 ![Product review](./README_ASSESTS/project-screenshots/product-review.png)
+![Product review prompt](./README_ASSESTS/project-screenshots/review-login-prompt.png)
 
 ### Search, Order & Filter
 
-- The user can search for a product by name using the search bar. The user can also filter the products by category and sort the products by price.
+- The user can search for a product by name using the search bar. The user can also filter the products by category and sort the products by price, name and rating.
 ![Order & Filter](./README_ASSESTS/project-screenshots/order-filter.png)
 ![Search bar](./README_ASSESTS/project-screenshots/search-bar.png)
 
 ### Bag
 
-- The bag page displays all the products the user has added to their shopping bag. The user can update the quantity of a product or remove a product from their shopping bag.
+- The bag page displays all the products the user has added to their shopping bag. It shows the product name, price, size if applicable, quantity and subtotal. The user can update the quantity of a product using the input field. The user can also remove a product from their shopping bag. The user can also see the total cost of all the products in their shopping bag. The user can also see the delivery cost and the grand total of their order. They will also see a message notifing them of the free delivery threshold. The options to continue shopping or proceed to checkout are also available.
 ![Bag page](./README_ASSESTS/project-screenshots/bag.png)
 
 ### Order From
 
-- The order form page allows the user to enter their delivery details and payment information. The user can also save their delivery details to their profile.
+- The order form page allows the user to enter their delivery details and payment information. The user can also save their delivery details to their profile. On the right side of the page, the user can see the order summary. It lists all the products in the user's shopping bag, the delivery cost, the grand total.
 ![Order form](./README_ASSESTS/project-screenshots/checkout.png)
 
 ### Checkout Confirmation Page
 
-- The order confirmation page displays the user's order details and order number. The user will also receive an email confirmation of their order.
+- The order confirmation page displays the user's order details and order number. The user will also receive an email confirmation of their order when the order is placed. There is also a link to go back to the user's profile page.
 ![Order confirmation page](./README_ASSESTS/project-screenshots/checkout-confirmation.png)
 
 ### Profile Page
@@ -240,12 +259,12 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 
 ### Product Edit
 
-- Admin users can edit existing products on the site.
+- Admin users can edit existing products details on the site.
 ![Product edit](./README_ASSESTS/project-screenshots/product-management-edit.png)
 
 ### Contact Page
 
-- The contact page contains a contact form that allows the user to send a message to the site admin.
+- The contact page contains a contact form that allows the user to send a message to the site admin. The recieve a toast message to confirm the message was sent when successful.
 ![Contact page](./README_ASSESTS/project-screenshots/contact-us.png)
 
 ### Error Pages
@@ -290,10 +309,8 @@ Wireframes were created using Balsamiq. The wireframes were created for desktop 
 
 ## Features Left to Implement
 
-- Ability to add reviews for products
 - Stock management system to track stock levels and allow admin to add stock. The sale of an item would also update the stock level automatically.
 - A blog section to keep users up to date with the latest news and promotions.
-- An about us page to give the user more information about the company.
 - Setup address field to autofill if user is logged in and has details saved.
 - Pop up window to confirm deletion of a product.
 - Pop up window confirming add item to bag.
@@ -539,25 +556,29 @@ The robots.txt file was created and uploaded to the root directory of the site.
 
 ### Tools
 
-* [VS Code]() - IDE application used to develop code in.
-* [Balsamiq](https://balsamiq.com/wireframes/) - Low Fidelity Wireframes
-* [W3C Validator](https://validator.w3.org/) - Validator that checks the markup validity for Web Documents in HTML.
-* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - Validator that checks CSS validity.
-* [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) - Validator that checks syntax and stylistic problems in Python code.
-* [Am I responsive](https://ui.dev/amiresponsive) - Generates Responsive images for your website.
-* [Chrome DevTools and Lighthouse](https://developer.chrome.com/docs/devtools/) - Web Developer Tools.
-* [DB Diagram](https://dbdiagram.io/home) - Database Schema Design Tool.
+- [VS Code]() - IDE application used to develop code in.
+- [Balsamiq](https://balsamiq.com/wireframes/) - Low Fidelity Wireframes
+- [W3C Validator](https://validator.w3.org/) - Validator that checks the markup validity for Web Documents in HTML.
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) - Validator that checks CSS validity.
+- [Code Institute's Python Linter](https://pep8ci.herokuapp.com/) - Validator that checks syntax and stylistic problems in Python code.
+- [Am I responsive](https://ui.dev/amiresponsive) - Generates Responsive images for your website.
+- [Chrome DevTools and Lighthouse](https://developer.chrome.com/docs/devtools/) - Web Developer Tools.
+- [DB Diagram](https://dbdiagram.io/home) - Database Schema Design Tool.
+- [JSHint](https://jshint.com/) - JavaScript Validator.
 
 ## Credits
 
 - Mentor Lauren Nicole - For her guidance and support throughout the project and course.
 - Code Institute - For the course content and support.
 - Slack Community - For their support and guidance.
+- Cohort Facilitator Alan Bushell - For his support and guidance throughout the course.
 
 
 ### Content
 - All the products content were taken from [Abcon](https://www.abcon.com/)
 - All the products images were taken from [Abcon](https://www.abcon.com/)
+- The hero image on the landing page was taken from [Unsplash](https://unsplash.com/photos/man-wearing-black-hoodie-using-welding-tool-DB_q6rPFnBM)
+- The favicon was generated using [LeonardoAI](https://leonardo.ai/)
 
 
 ### Information Resources

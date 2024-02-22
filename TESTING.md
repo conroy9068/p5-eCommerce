@@ -160,7 +160,24 @@ I have conducted a series of manual tests on my application.
 | | Enter a comment | Not Required, user must enter a comment | Pass | |
 | | Click on Submit button | Submits rating, displays success toast message | Pass | |
 
+## Google Lighthouse
 
+| Page | Screenshot | Notes | Solution |
+| --- | --- | --- | --- |
+| Home | ![screenshot](./README_ASSESTS/google-lighthouse/home-lighthouse.png) | Performance was impacted due to large image and render-blocking resources | This could be solve using the steps provided in this link but due to time constraints it was not. [Link](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources/?utm_source=lighthouse&utm_medium=devtools)  |
+| About | ![screenshot](./README_ASSESTS/google-lighthouse/about-lighthouse.png) | Performace was impacted on this page | Save about image in webp format. I had issues using the correct format so reverted to the jpg before submission. |
+| Products | ![screenshot](./README_ASSESTS/google-lighthouse/products-lighthouse.png) | Performance was impacted on this page due to the product image format. |  Save images in next-gen formats  |
+| Product Details | ![screenshot](./README_ASSESTS/google-lighthouse/product-detail-lighthouse.png) |  |  |
+| Product Add | ![screenshot](./README_ASSESTS/google-lighthouse/product-add-lighthouse.png) |  |  |
+| Bag | ![screenshot](./README_ASSESTS/google-lighthouse/bag-lighthouse.png) |  | |
+| Contact | ![screenshot](./README_ASSESTS/google-lighthouse/contact-lighthouse.png) |  | |
+| Checkout | ![screenshot](./README_ASSESTS/google-lighthouse/contact-lighthouse.png) |  |   |
+| Order Confirmation | ![screenshot](./README_ASSESTS/google-lighthouse/order-confirmation-lighthouse.png) |  |   |
+| Profile | ![screenshot](./README_ASSESTS/google-lighthouse/profile-lighthouse.png) |  |   |
+| Newsletter | ![screenshot](./README_ASSESTS/google-lighthouse/newsletter-lighthouse.png) |  |   |
+| Login | ![screenshot](./README_ASSESTS/google-lighthouse/login-lighthouse.png) |  |   |
+| Register | ![screenshot](./README_ASSESTS/google-lighthouse/register-lighthouse.png) |  |   |
+| Logout | ![screenshot](./README_ASSESTS/google-lighthouse/logout-lighthouse.png) |  |   |
 
 ## Automated Testing
 
@@ -183,4 +200,10 @@ I have conducted a series of manual tests on my application.
 
 ## Unfixed Bugs
 
-There are no remaining bugs that I am aware of.
+- There is a bug when trying to delete 4 of the original products that were created when the project was first created. If a new product is created it can be deleted without any issues. The effected products are:
+    - [Polyfill](https://p5-ecommerce-fb6cb413b539.herokuapp.com/products/3/)
+    - [Multi Putty](https://p5-ecommerce-fb6cb413b539.herokuapp.com/products/1/)
+    - [CEC FLexible grinding disc 115mm](https://p5-ecommerce-fb6cb413b539.herokuapp.com/products/6/)
+    - [Finish line spreaders](https://p5-ecommerce-fb6cb413b539.herokuapp.com/products/5/)
+
+![screenshot](./README_ASSESTS/delete-bug.png)

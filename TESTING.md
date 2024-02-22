@@ -2,7 +2,11 @@
 
 Return back to the [README.md](README.md) file.
 
-During the development of the project flake8 was used to correct any syntax errors and to ensure that the code was PEP8 compliant. The code was also tested using the CI pylint https://pep8ci.herokuapp.com/ and the results were satisfactory. The are some exceptions to the PEP8 compliance, such as line length, which were necessary for the code to function as intended.
+(**Admin login details:**)
+Username: testadmin
+Password: Marketflex
+
+During the development of the project flake8 was used to correct any syntax errors and to ensure that the code was PEP8 compliant. The code was also tested using the CI pylint https://pep8ci.herokuapp.com/ and the results were satisfactory. The are some exceptions to the PEP8 compliance, such as line length in settings.py, which were necessary for the code to function as intended.
 
 Google chrome developer tools were used to test the responsiveness of the site on different devices. The site was also tested on different browsers such as Firefox, Safari and Microsoft Edge to ensure that the site was fully functional on all browsers.
 
@@ -50,6 +54,15 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | product | ![screenshot](./README_ASSESTS/python-linter-results/product-view-py.png) | Pass: No Errors |
 | profile | ![screenshot](./README_ASSESTS/python-linter-results/profile-view-pylint.png) | Pass: No Errors |
 | review | ![screenshot](./README_ASSESTS/python-linter-results/review-view-pylint.png) | Pass: No Errors |
+
+### JSHint
+
+- I ran my main javascript code through [JSHint](https://jshint.com/) and the results were satisfactory. I'm only displaying the main countryfield.js file and stripe_elements.js file due to time contraints.
+
+| File | Screenshot | Notes |
+| --- | --- | --- |
+| countryfield.js | ![screenshot](./README_ASSESTS/js-linter-results/countryfield-jshint.png) | Pass: No Errors just undefined variables $ |
+| stripe_elements.js | ![screenshot](./README_ASSESTS/js-linter-results/stripe-element-jshint.png) | Pass: No Errors just undefined variables $ |
 
 ## Manual Testing
 
@@ -179,6 +192,7 @@ I have conducted a series of manual tests on my application.
 | Login | ![screenshot](./README_ASSESTS/google-lighthouse/login-lighthouse.png) |  |   |
 | Register | ![screenshot](./README_ASSESTS/google-lighthouse/register-lighthouse.png) |  |   |
 | Logout | ![screenshot](./README_ASSESTS/google-lighthouse/logout-lighthouse.png) |  |   |
+| 404 | ![screenshot](./README_ASSESTS/google-lighthouse/404-lighthouse.png) |  |   |
 
 ## Automated Testing
 
@@ -208,3 +222,6 @@ I have conducted a series of manual tests on my application.
     - [Finish line spreaders](https://p5-ecommerce-fb6cb413b539.herokuapp.com/products/5/)
 
 ![screenshot](./README_ASSESTS/delete-bug.png)
+
+
+- There is a bug with the sort but dropdown. Its not sorting the ratings correctly. It sorts the ratings but not in the correct order. I plan to fix this in the future.

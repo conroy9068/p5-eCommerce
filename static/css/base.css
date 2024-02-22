@@ -12,7 +12,7 @@ body {
 
 .hero-background {
     position: relative;
-    background-image: url('/media/man-working-in-factory.jpg');
+    background-image: url('/media/man-working-in-factory.webp');
     background-size: cover;
     background-position: center;
     max-width: 100%;
